@@ -1,0 +1,2 @@
+class TestCalendar < ApplicationRecord
+end

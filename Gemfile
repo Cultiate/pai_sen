@@ -65,3 +65,6 @@ gem 'bootstrap','~> 4.0.0.alpha3'
 # jquery
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
+# シンプルカレンダー
+gem "simple_calendar", "~> 2.0"
