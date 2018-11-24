@@ -1,0 +1,20 @@
+<header class="mb-4">
+  <div class="row m-4 mt-0">
+    <div class="col-6"></div>
+    <% unless logged_in? %>
+      <div class="col-4 text-right" style="">
+        <%= link_to "登録", "#", class:"btn btn-sm btn-primary pt-1 pb-1" %>
+        <%= link_to "ログイン", "#", class:"btn btn-sm btn-secondary pt-1 pb-1 mr-4" %>
+        <%= link_to "ログアウト", "#" %>
+      </div>
+    <% end %>
+
+    <% if logged_in? %>
+      <div class="col-4 text-right">
+      ログインユーザー(開発用):
+      <%= link_to "マイページ", "#" %>
+      <%= link_to "ログアウト", "#" %>
+      </div>
+    <% end %>
+  </div>
+</header>

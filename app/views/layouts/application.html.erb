@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <title>PAISEN</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render "layouts/html_default" %>
+    <%= render "layouts/rails_default" %>
+    <%= render "layouts/shim" %>
   </head>
-
   <body>
+    <%= render "layouts/header" %>
+    <% flash.each do |msg_type, msg| %>
+      <div class="alert alert-<%= msg_type %>">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
+      <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
