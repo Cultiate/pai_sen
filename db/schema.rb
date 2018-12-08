@@ -60,4 +60,8 @@ ActiveRecord::Schema.define(version: 2018_11_25_090738) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "test_calendars", force: :cascade do |t|
+    t.datetime "start_time"
+  end
+  
 end
