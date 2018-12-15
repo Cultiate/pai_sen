@@ -17,3 +17,7 @@ module PaiSen
     # the framework and any gems in your application.
   end
 end
+
+# config.assets.precompile += Rails.root + 'app/assets/javascripts/key.js'
+# config.assets.precompile += Rails.root + 'app/assets/javascripts/script.js'
+# config.assets.precompile += Rails.root + 'app/assets/javascripts/skyway-latest.js'
