@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'tests/mypage'
   get 'tests/favoriteCoach'
   get 'tests/loginPage'
+  get 'tests/questionsPage'
 end
