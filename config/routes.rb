@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'tests/loginPage'
   get 'tests/questionsPage'
   get 'tests/reservationManagementPage'
+  get 'tests/contactUsPage'
 end
