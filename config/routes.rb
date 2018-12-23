@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'tests/favoriteCoach'
   get 'tests/loginPage'
   get 'tests/questionsPage'
+  get 'tests/reservationManagementPage'
 end
