@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'tests/questionsPage'
   get 'tests/reservationManagementPage'
   get 'tests/contactUsPage'
+  get 'tests/topDemoPage'
 end
