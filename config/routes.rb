@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   get 'tests/topDemoPage'
 
   resources :users
+  resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end

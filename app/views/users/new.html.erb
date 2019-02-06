@@ -1,0 +1,17 @@
+</br>
+</br>
+</br>
+<main>
+  <div>
+  <%= form_for(@user, url: users_path) do |f| %>
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email, placeholder:"info@example.com" %>
+    <%= f.label :email, "パスワード" %>
+    <%= f.password_field :password, placeholder:"英数字8文字以上" %>
+    <%= f.label :email, "パスワード(確認)" %>
+    <%= f.password_field :password_confirmation, placeholder:"英数字8文字以上" %>
+
+    <%= f.submit "登録" %>
+  <% end %>
+  </div>
+</main>

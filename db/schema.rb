@@ -44,8 +44,28 @@ ActiveRecord::Schema.define(version: 2019_02_06_155722) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "kana"
+    t.string "email"
+    t.string "birthday"
+    t.string "university"
+    t.string "department"
+    t.string "graduate_year"
+    t.text "greeting"
+    t.string "password_digest"
+    t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false, null: false
+    t.datetime "activated_at"
+    t.string "user_image"
+    t.string "provider"
+    t.string "uid"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["name"], name: "index_users_on_name"
   end
 
 end
