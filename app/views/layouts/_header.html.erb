@@ -36,16 +36,16 @@
             <!-- <a class="nav-link" href="#">登録</a> -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ログイン</a>
+            <%= link_to "ログイン", login_path, class:"nav-link" %>
           </li>
         <% end %>
 
         <% if logged_in? %>
           <li class="nav-item">
-            <a class="nav-link" href="#">マイページ</a>
+            <%= link_to "マイページ", user_path(id: current_user), class:"nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ログアウト</a>
+            <%= link_to "ログアウト", logout_path, method: "DELETE", class:"nav-link" %>
           </li>
         <% end %>
       </ul>

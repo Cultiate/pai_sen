@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @invitation = Invitation.find_by(user_id: params[:user_id])
   end
 
   def create
