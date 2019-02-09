@@ -32,21 +32,30 @@
         </li>
         <% unless logged_in? %>
           <li class="nav-item">
-            <a class="nav-link" href="#">登録</a>
+            <%= link_to "登録", new_user_path, class:"nav-link" %>
+            <!-- <a class="nav-link" href="#">登録</a> -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ログイン</a>
+            <%= link_to "ログイン", login_path, class:"nav-link" %>
           </li>
         <% end %>
 
         <% if logged_in? %>
           <li class="nav-item">
-            <a class="nav-link" href="#">マイページ</a>
+            <%= link_to "マイページ", user_path(id: current_user), class:"nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ログアウト</a>
+            <%= link_to "ログアウト", logout_path, method: "DELETE", class:"nav-link" %>
           </li>
         <% end %>
+        <a href="/tests/test">テスト</a>
+        <a href="/tests/mypage">マイページ</a>
+        <a href="/tests/favoriteCoach">お気に入りコーチ</a>
+        <a href="/tests/loginPage">ログイン</a>
+        <a href="/tests/questionsPage">Q&A</a>
+        <a href="/tests/reservationManagementPage">予約管理</a>
+        <a href="/tests/contactUsPage">問い合わせ</a>
+        <a href="/tests/topDemoPage">トップ</a>
       </ul>
       <form class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

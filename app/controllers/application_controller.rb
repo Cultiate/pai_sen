@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
-  include StudentsHelper
+  include UsersHelper
   include CoachesHelper
 end
