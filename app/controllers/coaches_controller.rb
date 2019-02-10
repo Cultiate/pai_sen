@@ -1,19 +1,19 @@
-class UsersController < ApplicationController
+class CoachesController < ApplicationController
 
   def new
-    @coach = User.new
+    @coach = Coach.new
   end
 
   def show
-    @coach = current_user
+    @coach = current_coach
   end
 
   def detail
-    @coach = current_user
+    @coach = current_coach
   end
 
   def create
-    @coach = User.new(user_params)
+    @coach = Coach.new(coach_params)
       if @coach.save
         @coach.send_activation_email
         flash[:success] = "登録メールアドレスに本登録のURLを送信しました。"
@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   end
 
   def detail_update
-    @coach = User.find(params[:id])
-    @coach.update_attributes(user_params)
+    @coach = Coach.find(params[:id])
+    @coach.update_attributes(coach_params)
     if @coach.save
       flash[:success] = "登録が完了しました。"
       redirect_to @coach
@@ -33,8 +33,8 @@ class UsersController < ApplicationController
   end
 
   def password_update
-    @coach = User.find(params[:id])
-    @coach.update_attributes(user_params)
+    @coach = Coach.find(params[:id])
+    @coach.update_attributes(coach_params)
     if @coach.save
       flash[:success] = "登録が完了しました。"
       redirect_to @coach
@@ -47,14 +47,14 @@ class UsersController < ApplicationController
 
     def coach_params
       params.require(:coach).permit(
-        :name, :kana, :email, :birthday, :university, :department, :graduate_year, :greeting,
+        :name, :kana, :email, :birthday, :status, :company, :business, :occupation, :greeting,
         :password, :password_confirmation, :remember_digest, :activation_digest, :activated, :activated_at,
-        :user_image, :provider, :uid, :reset_digest, :reset_sent_at
+        :coach_image, :provider, :uid, :reset_digest, :reset_sent_at
       )
     end
 
     def correct_coach
-      @coach = User.find_by(id: params[:id])
-      redirect_to root_url unless current_user?(@coach)
+      @coach = Coach.find_by(id: params[:id])
+      redirect_to root_url unless current_coach?(@coach)
     end
 end

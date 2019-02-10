@@ -3,9 +3,9 @@
 </br>
 <main>
   <div>
-  <%= form_for(@coach, url: coachs_path) do |f| %>
+  <%= form_for(@coach, url: coaches_path) do |f| %>
+    <%= f.check_box :status %>
     <%= f.label :status, "内定者の方はこちらをチェックしてください。" %>
-    <%= f.checkbox :status %>
     <%= f.label :email, "メールアドレス" %>
     <%= f.email_field :email, placeholder:"info@example.com" %>
     <%= f.label :password, "パスワード" %>

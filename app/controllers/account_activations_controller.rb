@@ -9,6 +9,21 @@ class AccountActivationsController < ApplicationController
       flash[:success] = "アカウントが有効化されました。続いてユーザー情報を登録してください。"
       redirect_to detail_user_url(id: current_user)
     else
+      flash[:danger] = "USERリンクが正しくありません。"
+      redirect_to root_url
+    end
+  end
+
+  def coach_edit
+    @coach = Coach.find_by(email: params[:email])
+    binding.pry
+    if @coach && !@coach.activated? && @coach.authenticated?(:activation, params[:id])
+      @coach.update_attribute(:activated, true)
+      @coach.update_attribute(:activated_at, Time.zone.now)
+      log_in @coach
+      flash[:success] = "アカウントが有効化されました。続いてユーザー情報を登録してください。"
+      redirect_to detail_coach_url(id: current_coach)
+    else
       flash[:danger] = "リンクが正しくありません。"
       redirect_to root_url
     end

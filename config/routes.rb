@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'events/index'
-  get 'events/show'
-  get 'events/new'
-  get 'events/edit'
+
   root "root#top"
 
   get 'tests/test'
@@ -17,11 +14,16 @@ Rails.application.routes.draw do
   resources :users
   get "detail/:id" => "users#detail", as: :detail_user
   patch "detail/:id" => "users#detail_update", as: :detail_update
-  resources :coachs
+
+  resources :coaches
   get "detail/:coach_id" => "coachs#detail", as: :detail_coach
   patch "detail/:coach_id" => "coachs#detail_update", as: :coach_detail_update
+
   resources :account_activations, only: [:edit]
+  get "account_activations/:id/edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
+
   resources :password_resets, only: [:new, :create, :edit, :update]
+
   resources :events
 
   get "login" => "sessions#new"

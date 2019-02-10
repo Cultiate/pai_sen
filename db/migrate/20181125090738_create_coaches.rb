@@ -1,9 +1,9 @@
 class CreateCoaches < ActiveRecord::Migration[5.2]
   def change
     create_table :coaches do |t|
-      t.string :name
+      t.string :name, index: true
       t.string :kana
-      t.string :email
+      t.string :email, index: true, unique: true
       t.datetime :birthday
       t.boolean :status
       t.string :company
@@ -14,9 +14,9 @@ class CreateCoaches < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :remember_digest
       t.string :activation_digest
-      t.boolean :activated
+      t.boolean :activated, default: false, null: false
       t.datetime :activated_at
-      t.string :user_image
+      t.string :coach_image
       t.string :provider
       t.string :uid
       t.string :reset_digest
