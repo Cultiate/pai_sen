@@ -8,13 +8,39 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def detail
+    @user = current_user
+  end
+
   def create
     @user = User.new(user_params)
       if @user.save
         @user.send_activation_email
-        redirect_to root_url
         flash[:success] = "登録メールアドレスに本登録のURLを送信しました。"
+        redirect_to root_url
       end
+  end
+
+  def detail_update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
+    if @user.save
+      flash[:success] = "登録が完了しました。"
+      redirect_to @user
+    else
+      render "detail"
+    end
+  end
+
+  def password_update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
+    if @user.save
+      flash[:success] = "登録が完了しました。"
+      redirect_to @user
+    else
+      render "detail"
+    end
   end
 
   private

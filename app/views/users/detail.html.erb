@@ -1,0 +1,29 @@
+</br>
+</br>
+</br>
+<main>
+  <div>
+  <%= form_for(@user, url: detail_update_path) do |f| %>
+
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name, placeholder:"山田太郎" %>
+
+    <%= f.label :kana, "カナ" %>
+    <%= f.text_field :kana, placeholder:"ヤマダタロウ" %>
+
+    <%= f.label :birthday, "生年月日" %>
+    <%= f.text_field :birthday, placeholder:"1995年1月1日" %>
+
+    <%= f.label :university, "大学名" %>
+    <%= f.text_field :university, placeholder:"PAISEN大学" %>
+
+    <%= f.label :department, "学部" %>
+    <%= f.text_field :department, placeholder:"PAISEN学部" %>
+
+    <%= f.label :graduate_year, "生年月日" %>
+    <%= f.text_field :graduate_year, placeholder:"2020年 3月卒" %>
+
+    <%= f.submit "登録" %>
+  <% end %>
+  </div>
+</main>

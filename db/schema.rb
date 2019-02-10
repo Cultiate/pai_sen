@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_02_09_081853) do
     t.string "kana"
     t.string "email"
     t.datetime "birthday"
+    t.boolean "status"
     t.string "company"
     t.string "business"
     t.string "occupation"

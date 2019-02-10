@@ -5,12 +5,12 @@ class CreateCoaches < ActiveRecord::Migration[5.2]
       t.string :kana
       t.string :email
       t.datetime :birthday
+      t.boolean :status
       t.string :company
       t.string :business
       t.string :occupation
-      t.text :career
-      t.integer :coaching_fee
       t.text :greeting
+      t.integer :coaching_fee
       t.string :password_digest
       t.string :remember_digest
       t.string :activation_digest

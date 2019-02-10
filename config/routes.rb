@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   get 'tests/topDemoPage'
 
   resources :users
+  get "detail/:id" => "users#detail", as: :detail_user
+  patch "detail/:id" => "users#detail_update", as: :detail_update
+  resources :coachs
+  get "detail/:coach_id" => "coachs#detail", as: :detail_coach
+  patch "detail/:coach_id" => "coachs#detail_update", as: :coach_detail_update
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :events

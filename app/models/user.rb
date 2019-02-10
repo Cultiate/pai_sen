@@ -2,9 +2,9 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
-  validates :email, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }, on: :update_password
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, on: :update_password
 
   def self.from_omniauth(auth)
     user = User.where('email = ?', auth.info.email).first
