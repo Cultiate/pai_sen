@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   patch "detail/:id" => "users#detail_update", as: :detail_update
 
   resources :coaches
-  get "detail/:coach_id" => "coachs#detail", as: :detail_coach
-  patch "detail/:coach_id" => "coachs#detail_update", as: :coach_detail_update
+  get "coach/detail/:id" => "coaches#detail", as: :detail_coach
+  patch "coach/detail/:id" => "coaches#detail_update", as: :coach_detail_update
 
+  get "account_activations/:id/coach_edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
   resources :account_activations, only: [:edit]
-  get "account_activations/:id/edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 
