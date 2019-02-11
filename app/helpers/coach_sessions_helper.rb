@@ -1,5 +1,5 @@
 module CoachSessionsHelper
-  
+
   def log_in(coach)
     session[:coach_id] = coach.id
   end
@@ -28,11 +28,11 @@ module CoachSessionsHelper
     end
   end
 
-  def logged_in?
+  def coach_logged_in?
     !current_coach.nil?
   end
 
-  def log_out
+  def coach_log_out
     forget(current_coach)
     session.delete(:coach_id)
     @current_coach = nil

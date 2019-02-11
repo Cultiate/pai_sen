@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_02_09_081853) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.integer "user_id"
     t.string "title"
     t.datetime "start"
     t.datetime "end"

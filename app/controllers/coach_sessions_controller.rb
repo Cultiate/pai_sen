@@ -27,7 +27,7 @@ class CoachSessionsController < ApplicationController
   end
 
   def destroy
-    log_out if logged_in?
+    coach_log_out if coach_logged_in?
     flash[:success] = "ログアウトしました。"
     redirect_to root_url
   end
