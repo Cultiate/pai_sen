@@ -30,13 +30,34 @@
         <li class="nav-item">
           <a class="nav-link" href="#">チャット相談</a>
         </li>
+
         <% unless logged_in? %>
           <li class="nav-item">
-            <%= link_to "登録", new_user_path, class:"nav-link" %>
-            <!-- <a class="nav-link" href="#">登録</a> -->
+            <%= link_to "登録（学生）", new_user_path, class:"nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "ログイン", login_path, class:"nav-link" %>
+            <%= link_to "登録（コーチ）", new_coach_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン（学生）", login_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン（コーチ）", coach_login_path, class:"nav-link" %>
+          </li>
+        <% end %>
+
+        <% unless coach_logged_in? %>
+          <li class="nav-item">
+            <%= link_to "登録（学生）", new_user_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "登録（コーチ）", new_coach_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン（学生）", login_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン（コーチ）", coach_login_path, class:"nav-link" %>
           </li>
         <% end %>
 
@@ -48,6 +69,16 @@
             <%= link_to "ログアウト", logout_path, method: "DELETE", class:"nav-link" %>
           </li>
         <% end %>
+
+        <% if coach_logged_in? %>
+          <li class="nav-item">
+            <%= link_to "allマイページ", coach_path(id: current_coach), class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "allログアウト", coach_logout_path, method: "DELETE", class:"nav-link" %>
+          </li>
+        <% end %>
+
         <a href="/tests/test">テスト</a>
         <a href="/tests/mypage">マイページ</a>
         <a href="/tests/favoriteCoach">お気に入りコーチ</a>

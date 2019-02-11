@@ -5,11 +5,11 @@ class CoachesController < ApplicationController
   end
 
   def show
-    @coach = current_coach
+    @coach = Coach.find(params[:id])
   end
 
   def detail
-    @coach = current_coach
+    @coach = Coach.find(params[:id])
   end
 
   def create
