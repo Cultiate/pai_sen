@@ -74,14 +74,14 @@ $(document).ready(function() {
     weekMode: 'fixed',                     // 週モード (fixed, liquid, variable)
     weekNumbers: false,                    // 週数を表示
     slotDuration: '00:30:00',              // 表示する時間軸の細かさ
-    snapDuration: '00:15:00',              // スケジュールをスナップするときの動かせる細かさ
+    snapDuration: '00:30:00',              // スケジュールをスナップするときの動かせる細かさ
     minTime: "00:00:00",                   // スケジュールの開始時間
     maxTime: "24:00:00",                   // スケジュールの最終時間
     defaultTimedEventDuration: '10:00:00', // 画面上に表示する初めの時間(スクロールされている場所)
     allDaySlot: false,                     // 終日スロットを非表示
     allDayText:'allday',                   // 終日スロットのタイトル
-    slotMinutes: 15,                       // スロットの分
-    snapMinutes: 15,                       // 選択する時間間隔
+    slotMinutes: 30,                       // スロットの分
+    snapMinutes: 30,                       // 選択する時間間隔
     firstHour: 9,                          // スクロール開始時間
     eventClick: function(event) { //イベントをクリックしたときに実行
       var id = event.id

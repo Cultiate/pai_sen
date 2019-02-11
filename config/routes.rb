@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  # ここから追記
+  namespace :api, { format: 'json' } do
+    namespace :v1 do
+        resources :events
+    end
+  end
+# 追記終了
+
   get 'events/index'
   get 'events/show'
   get 'events/new'
