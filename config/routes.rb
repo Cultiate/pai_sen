@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'tests/reservationManagementPage'
   get 'tests/contactUsPage'
   get 'tests/topDemoPage'
+  get 'tests/chatroom'
 
   resources :users
   get "detail/:id" => "users#detail", as: :detail_user
