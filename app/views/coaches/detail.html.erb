@@ -1,0 +1,35 @@
+</br>
+</br>
+</br>
+<main>
+  <div>
+  <%= form_for(@coach, url: coach_detail_update_path) do |f| %>
+
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name, placeholder:"山田太郎" %>
+
+    <%= f.label :kana, "カナ" %>
+    <%= f.text_field :kana, placeholder:"ヤマダタロウ" %>
+
+    <%= f.label :birthday, "生年月日" %>
+    <%= f.text_field :birthday, placeholder:"1995年1月1日" %>
+
+    <%= f.label :company, "会社名" %>
+    <%= f.text_field :company, placeholder:"株式会社PAISEN" %>
+
+    <%= f.label :business, "職業" %>
+    <%= f.text_field :business, placeholder:"会社員" %>
+
+    <%= f.label :occupation, "職種" %>
+    <%= f.text_field :occupation, placeholder:"営業" %>
+
+    <%= f.label :occupation, "職種" %>
+    <%= f.text_field :occupation, placeholder:"営業" %>
+
+    <%= f.label :greeting, "自己紹介文" %>
+    <%= f.text_field :greeting, placeholder:"自己紹介文" %>
+
+    <%= f.submit "登録" %>
+  <% end %>
+  </div>
+</main>

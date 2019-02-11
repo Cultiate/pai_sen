@@ -1,17 +1,6 @@
 Rails.application.routes.draw do
 
-  # ここから追記
-  namespace :api, { format: 'json' } do
-    namespace :v1 do
-        resources :events
-    end
-  end
-# 追記終了
 
-  get 'events/index'
-  get 'events/show'
-  get 'events/new'
-  get 'events/edit'
   root "root#top"
 
   get 'tests/test'
@@ -24,8 +13,18 @@ Rails.application.routes.draw do
   get 'tests/topDemoPage'
 
   resources :users
+  get "detail/:id" => "users#detail", as: :detail_user
+  patch "detail/:id" => "users#detail_update", as: :detail_update
+
+  resources :coaches
+  get "coach/detail/:id" => "coaches#detail", as: :detail_coach
+  patch "coach/detail/:id" => "coaches#detail_update", as: :coach_detail_update
+
+  get "account_activations/:id/coach_edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
   resources :account_activations, only: [:edit]
+
   resources :password_resets, only: [:new, :create, :edit, :update]
+
   resources :events
 
   get "login" => "sessions#new"

@@ -1,20 +1,20 @@
-class SessionsController < ApplicationController
+class CoachSessionsController < ApplicationController
   protect_from_forgery except: :destroy
-  
+
   def new
   end
 
   def create
-    @user = User.find_by(email: params[:session][:email].downcase)
-      if @user && @user.authenticate(params[:session][:password])
-        if @user.activated?
-          log_in(@user)
+    @coach = Coach.find_by(email: params[:session][:email].downcase)
+      if @coach && @coach.authenticate(params[:session][:password])
+        if @coach.activated?
+          log_in(@coach)
           if params[:session][:remember_me] == '1'
-            remember(@user)
+            remember(@coach)
           else
-            forget(@user)
+            forget(@coach)
           end
-          redirect_to user_url(id: current_user)
+          redirect_to coach_url(id: current_coach)
         else
           message  = "アカウントを有効化できませんでした。再度お送りしたリンクをご確認ください。"
           flash[:warning] = message
