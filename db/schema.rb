@@ -17,24 +17,26 @@ ActiveRecord::Schema.define(version: 2019_02_09_081853) do
     t.string "kana"
     t.string "email"
     t.datetime "birthday"
+    t.boolean "status"
     t.string "company"
     t.string "business"
     t.string "occupation"
-    t.text "career"
-    t.integer "coaching_fee"
     t.text "greeting"
+    t.integer "coaching_fee"
     t.string "password_digest"
     t.string "remember_digest"
     t.string "activation_digest"
-    t.boolean "activated"
+    t.boolean "activated", default: false, null: false
     t.datetime "activated_at"
-    t.string "user_image"
+    t.string "coach_image"
     t.string "provider"
     t.string "uid"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_coaches_on_email"
+    t.index ["name"], name: "index_coaches_on_name"
   end
 
   create_table "events", force: :cascade do |t|
@@ -44,35 +46,6 @@ ActiveRecord::Schema.define(version: 2019_02_09_081853) do
     t.datetime "end"
     t.string "color"
     t.boolean "allday"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.string "kana"
-    t.string "email"
-    t.datetime "birthday"
-    t.string "university"
-    t.string "department"
-    t.datetime "graduate_year"
-    t.text "greeting"
-    t.string "password_digest"
-    t.string "remember_digest"
-    t.string "activation_digest"
-    t.boolean "activated"
-    t.datetime "activated_at"
-    t.string "user_image"
-    t.string "provider"
-    t.string "uid"
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "test_calendars", force: :cascade do |t|
-    t.datetime "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

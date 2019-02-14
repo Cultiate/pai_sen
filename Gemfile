@@ -30,6 +30,7 @@ gem 'mini_magick', '4.7.0'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'bcrypt'
+gem 'rb-readline'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
