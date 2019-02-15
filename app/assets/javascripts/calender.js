@@ -30,7 +30,7 @@ $(document).ready(function() {
     }
     $.ajax({
      type: "POST",
-     url: "events",
+     url: "/events",
      data: data,
      success: function() {
        calendar.fullCalendar('refetchEvents');
@@ -90,7 +90,7 @@ $(document).ready(function() {
     },
     eventResize: function(event) { //イベントをサイズ変更した際に実行
       var id = event.id
-      var update_url = "event"
+      var update_url = "/event/"+id
       var event_start_time = event._start._d
       var year = event_start_time.getYear() + 1900;
       var month = event_start_time.getMonth() + 1;
