@@ -5,11 +5,11 @@ class CoachesController < ApplicationController
   end
 
   def show
-    @coach = Coach.find(params[:id])
+    @coach = Coach.find(params[:coach_id])
   end
 
   def detail
-    @coach = Coach.find(params[:id])
+    @coach = Coach.find(params[:coach_id])
   end
 
   def create
@@ -22,7 +22,7 @@ class CoachesController < ApplicationController
   end
 
   def detail_update
-    @coach = Coach.find(params[:id])
+    @coach = Coach.find(params[:coach_id])
     @coach.update_attributes(coach_params)
     if @coach.save
       flash[:success] = "登録が完了しました。"
@@ -33,7 +33,7 @@ class CoachesController < ApplicationController
   end
 
   def password_update
-    @coach = Coach.find(params[:id])
+    @coach = Coach.find(params[:coach_id])
     @coach.update_attributes(coach_params)
     if @coach.save
       flash[:success] = "登録が完了しました。"
@@ -54,7 +54,7 @@ class CoachesController < ApplicationController
     end
 
     def correct_coach
-      @coach = Coach.find_by(id: params[:id])
+      @coach = Coach.find_by(id: params[:coach_id])
       redirect_to root_url unless current_coach?(@coach)
     end
 end

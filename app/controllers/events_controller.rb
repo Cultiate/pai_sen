@@ -33,7 +33,6 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
-    binding.pry
   end
 
   def update

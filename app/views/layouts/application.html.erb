@@ -16,7 +16,8 @@
     <%= yield %>
       <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
-      <%= current_user.to_s %>
-      <%= current_coach %>
+      <%= current_user.email if current_user %>
+      <%= current_coach.email if current_coach %>
+      <%= session.to_hash %>
   </body>
 </html>

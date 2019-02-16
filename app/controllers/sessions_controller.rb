@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   protect_from_forgery except: :destroy
-  
+
   def new
   end
 
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
           else
             forget(@user)
           end
-          redirect_to user_url(id: current_user)
+          redirect_to user_url(id: @user)
         else
           message  = "アカウントを有効化できませんでした。再度お送りしたリンクをご確認ください。"
           flash[:warning] = message

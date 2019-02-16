@@ -46,24 +46,9 @@
           </li>
         <% end %>
 
-        <% unless logged_in? || coach_logged_in? %>
-          <li class="nav-item">
-            <%= link_to "c登録（学生）", new_user_path, class:"nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "c登録（コーチ）", new_coach_path, class:"nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "cログイン（学生）", login_path, class:"nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "cログイン（コーチ）", coach_login_path, class:"nav-link" %>
-          </li>
-        <% end %>
-
         <% if logged_in? %>
           <li class="nav-item">
-            <%= link_to "マイページ", user_path(id: current_user), class:"nav-link" %>
+            <%= link_to "マイページ", user_show_path(user_id: current_user), class:"nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "ログアウト", logout_path, method: "DELETE", class:"nav-link" %>
@@ -72,7 +57,7 @@
 
         <% if coach_logged_in? %>
           <li class="nav-item">
-            <%= link_to "cマイページ", coach_path(id: current_coach), class:"nav-link" %>
+            <%= link_to "cマイページ", coach_show_path(coach_id: current_coach), class:"nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "cログアウト", coach_logout_path, method: "DELETE", class:"nav-link" %>
