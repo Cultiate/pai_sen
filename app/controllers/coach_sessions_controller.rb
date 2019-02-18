@@ -2,6 +2,7 @@ class CoachSessionsController < ApplicationController
   protect_from_forgery except: :destroy
 
   def new
+    @coach = Coach.new
   end
 
   def create
@@ -14,7 +15,7 @@ class CoachSessionsController < ApplicationController
           else
             forget(@coach)
           end
-          redirect_to coach_url(id: current_coach)
+          redirect_to root_url(id: current_coach)
         else
           message  = "アカウントを有効化できませんでした。再度お送りしたリンクをご確認ください。"
           flash[:warning] = message

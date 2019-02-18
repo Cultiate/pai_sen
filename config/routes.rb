@@ -22,15 +22,15 @@ Rails.application.routes.draw do
   patch "detail/:user_id" => "users#detail_update", as: :user_detail_update
   get "message_show/:user_id" => "users#message_show"
 
-  post "coachs" => "coachs#create", as: :coachs
-  get "coachs/new" => "coachs#new", as: :new_coach
-  get "coachs/:coach_id/edit" => "coachs#edit", as: :edit_coach
-  get "coachs/:coach_id" => "coachs#show", as: :coach_show
-  patch "coachs/:coach_id" => "coachs#update", as: :coach_update
-  delete "coachs/:coach_id" => "coachs#destroy", as: :coach_destroy
-  get "detail/:coach_id" => "coachs#detail", as: :coach_detail
-  patch "detail/:coach_id" => "coachs#detail_update", as: :coach_detail_update
-  get "message_show/:coach_id" => "coachs#message_show"
+  post "coaches" => "coaches#create", as: :coaches
+  get "coaches/new" => "coaches#new", as: :new_coach
+  get "coaches/:coach_id/edit" => "coaches#edit", as: :edit_coach
+  get "coaches/:coach_id" => "coaches#show", as: :coach_show
+  patch "coaches/:coach_id" => "coaches#update", as: :coach_update
+  delete "coaches/:coach_id" => "coaches#destroy", as: :coach_destroy
+  get "detail/:coach_id" => "coaches#detail", as: :coach_detail
+  patch "detail/:coach_id" => "coaches#detail_update", as: :coach_detail_update
+  get "message_show/:coach_id" => "coaches#message_show"
 
   get "account_activations/:id/coach_edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
   resources :account_activations, only: [:edit]

@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user.update_attributes(user_params)
     if @user.save
       flash[:success] = "登録が完了しました。"
-      redirect_to @user
+      redirect_to user_show_url(@user)
     else
       render "detail"
     end

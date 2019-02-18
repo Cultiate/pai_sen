@@ -5,7 +5,7 @@
 </br>
 <main>
   <div>
-  <%= form_for(@user, url: detail_update_path) do |f| %>
+  <%= form_for(@user, url: user_detail_update_path) do |f| %>
 
     <%= f.label :name, "名前" %>
     <%= f.text_field :name, placeholder:"山田太郎" %>
