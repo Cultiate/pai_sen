@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_14_091201) do
+ActiveRecord::Schema.define(version: 2019_02_17_095240) do
 
   create_table "coaches", force: :cascade do |t|
     t.string "name"
@@ -41,11 +41,14 @@ ActiveRecord::Schema.define(version: 2019_02_14_091201) do
 
   create_table "events", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "coach_id"
     t.string "title"
     t.datetime "start"
     t.datetime "end"
     t.string "color"
     t.boolean "allday"
+    t.string "timenumber"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +61,15 @@ ActiveRecord::Schema.define(version: 2019_02_14_091201) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["room_id", "created_at"], name: "index_messages_on_room_id_and_created_at"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.date "date"
+    t.string "timenumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
