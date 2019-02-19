@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   get "users/:user_id" => "users#show", as: :user_show
   patch "users/:user_id" => "users#update", as: :user_update
   delete "users/:user_id" => "users#destroy", as: :user_destory
-  get "detail/:user_id" => "users#detail", as: :user_detail
-  patch "detail/:user_id" => "users#detail_update", as: :user_detail_update
-  get "message_show/:user_id" => "users#message_show"
+  get "detail/users/:user_id" => "users#detail", as: :user_detail
+  patch "detail/users/:user_id" => "users#detail_update", as: :user_detail_update
+  get "message_show/users/:user_id" => "users#message_show", as: :users_message_show
 
   post "coaches" => "coaches#create", as: :coaches
   get "coaches/new" => "coaches#new", as: :new_coach
@@ -28,12 +28,12 @@ Rails.application.routes.draw do
   get "coaches/:coach_id" => "coaches#show", as: :coach_show
   patch "coaches/:coach_id" => "coaches#update", as: :coach_update
   delete "coaches/:coach_id" => "coaches#destroy", as: :coach_destroy
-  get "detail/:coach_id" => "coaches#detail", as: :coach_detail
-  patch "detail/:coach_id" => "coaches#detail_update", as: :coach_detail_update
-  get "message_show/:coach_id" => "coaches#message_show"
+  get "detail/coaches/:coach_id" => "coaches#detail", as: :coach_detail
+  patch "detail/coaches/:coach_id" => "coaches#detail_update", as: :coach_detail_update
+  get "message_show/coaches/:coach_id" => "coaches#message_show", as: :coach_message_show
 
-  get "account_activations/:id/coach_edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
-  resources :account_activations, only: [:edit]
+  get "account_activations/:user_id/user_edit" => "account_activations#coach_edit", as: :user_edit_account_activation
+  get "account_activations/:coach_id/coach_edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 

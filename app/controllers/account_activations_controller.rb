@@ -7,7 +7,7 @@ class AccountActivationsController < ApplicationController
       @user.update_attribute(:activated_at, Time.zone.now)
       log_in @user
       flash[:success] = "アカウントが有効化されました。続いてユーザー情報を登録してください。"
-      redirect_to user_detail_url(user_id: @user)
+      redirect_to user_detail_url(user_id: @user.id)
     else
       flash[:danger] = "USERリンクが正しくありません。"
       redirect_to root_url

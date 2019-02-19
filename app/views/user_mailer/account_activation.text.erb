@@ -12,4 +12,4 @@
 
 </p>
 
-<%= link_to "アカウントを有効化する", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<%= link_to "アカウントを有効化する", user_edit_account_activation_url(@user.activation_token, email: @user.email) %>
