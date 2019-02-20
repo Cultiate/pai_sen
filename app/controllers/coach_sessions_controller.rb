@@ -9,15 +9,15 @@ class CoachSessionsController < ApplicationController
     @coach = Coach.find_by(email: params[:session][:email].downcase)
       if @coach && @coach.authenticate(params[:session][:password])
         if @coach.activated?
-          log_in(@coach)
+          log_in_coach(@coach)
           if params[:session][:remember_me] == '1'
-            remember(@coach)
+            remember_coach(@coach)
           else
-            forget(@coach)
+            forget_coach(@coach)
           end
           redirect_to root_url(id: current_coach)
         else
-          message  = "アカウントを有効化できませんでした。再度お送りしたリンクをご確認ください。"
+          message  = "コーチアカウントを有効化できませんでした。再度お送りしたリンクをご確認ください。"
           flash[:warning] = message
           redirect_to root_url
         end
