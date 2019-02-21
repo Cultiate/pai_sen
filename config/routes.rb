@@ -32,20 +32,21 @@ Rails.application.routes.draw do
   patch "detail/coaches/:coach_id" => "coaches#detail_update", as: :coach_detail_update
   get "message_show/coaches/:coach_id" => "coaches#message_show", as: :coach_message_show
 
-  get "account_activations/:user_id/edit" => "account_activations#edit", as: :user_edit_account_activation
+
+  get "account_activations/:user_id/user_edit" => "account_activations#edit", as: :user_edit_account_activation
   get "account_activations/:coach_id/coach_edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   resources :events
 
-  get "coach_login" => "coach_sessions#new"
-  post "coach_login" => "coach_sessions#create"
-  delete "coach_logout" => "coach_sessions#destroy"
-
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
+
+  get "coach_login" => "coach_sessions#new"
+  post "coach_login" => "coach_sessions#create"
+  delete "coach_logout" => "coach_sessions#destroy"
 
   mount ActionCable.server => '/cable'
 
