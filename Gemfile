@@ -41,6 +41,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
   gem 'bullet'
+  gem 'foreman'
 end
 
 # シンプルカレンダー
@@ -48,3 +49,6 @@ gem 'simple_calendar', '~> 2.0'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+#Vue
+gem 'webpacker', github: 'rails/webpacker'

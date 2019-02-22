@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'tests/contactUsPage'
   get 'tests/topDemoPage'
   get 'tests/chatroom'
+  get 'tests/vue'
 
   post "users" => "users#create", as: :users
   get "users/new" => "users#new", as: :new_user

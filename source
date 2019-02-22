@@ -1,0 +1,4 @@
+# 以下を追記します。こちらはターミナル起動時にnvmが使えるようになる設定です。
+# source ~/.nvm/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
