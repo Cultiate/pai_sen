@@ -1,5 +1,8 @@
 {
   "name": "pai_sen",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-stylus": "^2.7.0"
+  }
 }
