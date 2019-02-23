@@ -48,3 +48,9 @@ gem 'simple_calendar', '~> 2.0'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+# slim
+gem 'slim-rails'
+
+# html → slim
+gem 'html2slim'
