@@ -40,10 +40,10 @@ class Coach < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  def authenticated_coach?(attribute, token)
-    digest = send("#{attribute}_digest")
+  def authenticated_coach?(remember_token, token)
+    digest = self.send('remember_digest')
     return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
+    BCrypt::Password.new(digest).is_password?(remember_token)
   end
 
   def activate
