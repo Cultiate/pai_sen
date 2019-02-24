@@ -2,16 +2,36 @@ br
 br
 br
 br
-= form_for(:session, url: login_path) do |f|
-  = f.label :email, "メールアドレス"
-  = f.email_field :email, placeholder:"info@example.com"
-  = f.label :password, "パスワード"
-  = f.password_field :password, placeholder:"英数字8文字以上"
-  = f.label :remember_me do
-    = f.check_box :remember_me
-    span
-      | ログイン情報を記憶する
-  = f.submit "ログイン"
+main#login
+  .container
+    ul.overflow-hidden
+      li.float-left 
+        = link_to "Sign up", new_user_path, class:"nav-link"
+      li.float-left.px-4 
+        = link_to "Log in", login_path, class:"nav-link text-primary"
+      li.float-right 
+        = link_to "Forget", new_user_path, class:"nav-link"
+    .login-form
+      = form_for(:session, url: login_path) do |f|
+        / = f.label :email, "メールアドレス" 
+        = f.email_field :email, placeholder:"info@example.com",class:"form-control my-4"
+        / = f.label :password, "パスワード"
+        = f.password_field :password, placeholder:"英数字8文字以上",class:"form-control my-4"
+        = f.label :remember_me do
+          = f.check_box :remember_me
+          span
+            | ログイン情報を記憶する
+        .text-center.mt-4
+          = f.submit "ログイン",class:"btn btn-primary"
+      .mt-4.text-center
+        .bouton_facebook
+          .facebook_volet
+            img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/facebook_btn.png" class="mx-1"] Facebook
+
+          .txt_facebook
+            = link_to "Facebookのアカウントで登録する", new_user_path, class:"fb-signup"
+
+//          この下は何？？？？  //
 br
 br
 br
