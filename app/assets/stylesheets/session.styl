@@ -1,0 +1,109 @@
+.balloon1-top
+  position relative
+  display inline-block
+  margin 1.5em 0
+  padding 7px 10px
+  width 100%
+  min-width 120px
+  max-width 100%
+  color #555
+  font-size 16px
+  background lightgray
+
+  p
+    margin 0
+    padding 0
+
+  :before
+    content ""
+    position absolute
+    top -30px
+    left 50%
+    margin-left -15px
+    border 15px solid transparent
+    border-bottom 15px solid lightgray
+
+.signup-form
+  label 
+    display block
+  .form-control
+    background-color lightgray
+    border-color transparent
+
+ul
+  li
+    a
+      color #606060
+      :hover
+        color #67c5ca
+
+// vendor
+.facebook_volet{
+  width:50%;
+  margin 0 13%
+  height:40px;
+  padding:0px;
+  color white
+  background-color:#262d63;
+  position: absolute;
+  z-index: 2;
+}
+.txt_facebook
+{
+    width:50%;
+    margin 0 13%
+    height:40px;
+    padding:0px;
+    position: absolute;
+    z-index: 1;
+    border 2px solid #ccc
+    background-color:#ffffff;
+    line-height:40px;
+    font-family:'Roboto';
+    font-weight:300;
+    font-size:26px;
+
+}
+.bouton_facebook:hover .facebook_volet{
+    -webkit-animation: anim 1.2s;-webkit-animation-iteration-count:1;-webkit-animation-fill-mode:forwards;
+    -ms-animation: anim 1.2s;-ms-animation-iteration-count:1;-ms-animation-fill-mode:forwards;
+    -moz-animation: anim 1.2s;-moz-animation-iteration-count:1;-moz-animation-fill-mode:forwards;
+    animation: anim 1.2s;animation-iteration-count:1;animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes anim {
+    0% {-webkit-transform: perspective( 600px ) rotateX( 0deg );-webkit-transform-origin:100% 100%;}
+    40% {-webkit-transform: perspective( 600px ) rotateX( -220deg );-webkit-transform-origin:100% 100%;}
+    50% {-webkit-transform: perspective( 600px ) rotateX( -160deg );-webkit-transform-origin:100% 100%;}
+    60% {-webkit-transform: perspective( 600px ) rotateX( -210deg );-webkit-transform-origin:100% 100%;}
+    70% {-webkit-transform: perspective( 600px ) rotateX( -190deg );-webkit-transform-origin:100% 100%;}
+    80% {-webkit-transform: perspective( 600px ) rotateX( -200deg );-webkit-transform-origin:100% 100%;}
+    100% {-webkit-transform: perspective( 600px ) rotateX( -180deg );-webkit-transform-origin:100% 100%;}
+}
+@-ms-keyframes anim {
+    0% {-ms-transform: perspective( 600px ) rotateX( 0deg );-ms-transform-origin:100% 100%;}
+    40% {-ms-transform: perspective( 600px ) rotateX( -220deg );-ms-transform-origin:100% 100%;}
+    50% {-ms-transform: perspective( 600px ) rotateX( -160deg );-ms-transform-origin:100% 100%;}
+    60% {-ms-transform: perspective( 600px ) rotateX( -210deg );-ms-transform-origin:100% 100%;}
+    70% {-ms-transform: perspective( 600px ) rotateX( -190deg );-ms-transform-origin:100% 100%;}
+    80% {-ms-transform: perspective( 600px ) rotateX( -200deg );-ms-transform-origin:100% 100%;}
+    100% {-ms-transform: perspective( 600px ) rotateX( -180deg );-ms-transform-origin:100% 100%;}
+}
+@-moz-keyframes anim {
+    0% {-moz-transform: perspective( 600px ) rotateX( 0deg );-moz-transform-origin:100% 100%;}
+    40% {-moz-transform: perspective( 600px ) rotateX( -220deg );-moz-transform-origin:100% 100%;}
+    50% {-moz-transform: perspective( 600px ) rotateX( -160deg );-moz-transform-origin:100% 100%;}
+    60% {-moz-transform: perspective( 600px ) rotateX( -210deg );-moz-transform-origin:100% 100%;}
+    70% {-moz-transform: perspective( 600px ) rotateX( -190deg );-moz-transform-origin:100% 100%;}
+    80% {-moz-transform: perspective( 600px ) rotateX( -200deg );-moz-transform-origin:100% 100%;}
+    100% {-moz-transform: perspective( 600px ) rotateX( -180deg );-moz-transform-origin:100% 100%;}
+}
+@keyframes anim {
+    0% {transform: perspective( 600px ) rotateX( 0deg );transform-origin:100% 100%;}
+    40% {transform: perspective( 600px ) rotateX( -220deg );transform-origin:100% 100%;}
+    50% {transform: perspective( 600px ) rotateX( -160deg );transform-origin:100% 100%;}
+    60% {transform: perspective( 600px ) rotateX( -210deg );transform-origin:100% 100%;}
+    70% {transform: perspective( 600px ) rotateX( -190deg );transform-origin:100% 100%;}
+    80% {transform: perspective( 600px ) rotateX( -200deg );transform-origin:100% 100%;}
+    100% {transform: perspective( 600px ) rotateX( -180deg );transform-origin:100% 100%;}
+}

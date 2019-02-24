@@ -1,0 +1,28 @@
+main#signup
+  .container
+    ul.overflow-hidden
+      li.float-left 
+        = link_to "Sign up", new_user_path, class:"nav-link"
+      li.float-left.px-4 
+        = link_to "Log in", login_path, class:"nav-link"
+      li.float-right 
+        = link_to "Forget", new_user_path, class:"nav-link"
+    .signup-form
+      = form_for(@user, url: users_path) do |f|
+        / = f.label :email, "メールアドレス" 
+        = f.email_field :email, placeholder:"info@example.com",class:"form-control my-4"
+        / = f.label :password, "パスワード"
+        = f.password_field :password, placeholder:"英数字8文字以上",class:"form-control my-4"
+        / = f.label :password_confirmation, "パスワード(確認)"
+        = f.password_field :password_confirmation, placeholder:"英数字8文字以上",class:"form-control my-4"
+        .text-center.mt-4
+          = f.submit "登録",class:"btn btn-primary"
+      .mt-4.text-center
+        .bouton_facebook
+          .facebook_volet
+            img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/facebook_btn.png" class="mx-1"] Facebook
+
+          .txt_facebook
+            = link_to "Facebookのアカウントで登録する", new_user_path, class:"fb-signup"
+
+      
