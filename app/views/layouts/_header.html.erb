@@ -1,37 +1,47 @@
-<header style="margin-bottom:250px;">
+<header style="margin-bottom:80px;">
   <nav class="navbar nav-tabs navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">PAISEN</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">コーチOB/OG <span class="sr-only">(current)</span></a>
-        </li>
+      <ul class="navbar-nav mr-auto w-100" style="float:right;">
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">予約管理</a>
+
+      <li class="nav-item">
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </li>
+      <li class="nav-item m-3">
+        🔔
+      </li>
+      <li class="nav-item m-3">
+        📧
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">マイページ</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">コーチ検索</a>
-            <a class="dropdown-item" href="#">お気に入りコーチ</a>
-            <a class="dropdown-item" href="#">予約確認</a>
-            <a class="dropdown-item" href="#">コーチング履歴</a>
-            <a class="dropdown-item" href="#">スケジュール</a>
-            <a class="dropdown-item" href="#">メッセージ</a>
+            <a class="dropdown-item" href="#">ユーザー名</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">コーチング予約管理</a>
+            <a class="dropdown-item" href="#">コーチング履歴</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">設定</a>
+            <a class="dropdown-item" href="#">ログアウト</a>
           </div>
         </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">ES添削</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">チャット相談</a>
-        </li>
 
-        <% unless logged_in? || coach_logged_in? %>
+
+<div class="for_develop" style="border-bottom:3px double gray;">
+  <ul class="row">
+          <% unless logged_in? || coach_logged_in? %>
           <li class="nav-item">
             <%= link_to "登録（学生）", new_user_path, class:"nav-link" %>
           </li>
@@ -63,6 +73,7 @@
             <%= link_to "cログアウト", coach_logout_path, method: "DELETE", class:"nav-link" %>
           </li>
         <% end %>
+  </ul>
 
         <a href="/tests/test">テスト</a>
         <a href="/tests/mypage">マイページ</a>
@@ -73,11 +84,4 @@
         <a href="/tests/contactUsPage">問い合わせ</a>
         <a href="/tests/topDemoPage">トップ</a>
         <a href="/tests/chatroom">チャット</a>
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-</header>
+</div>
