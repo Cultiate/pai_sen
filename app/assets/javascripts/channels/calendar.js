@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 
   var select = function(start, end) {
@@ -35,7 +36,11 @@ $(document).ready(function() {
      success: function() {
        calendar.fullCalendar('refetchEvents');
      }
-    });
+    }).done(function(data){
+        alert("変更しました!");
+      }).fail(function(data){
+        alert("変更できませんでした。");
+      });
     calendar.fullCalendar('unselect');
   };
   var calendar = $('#calendar').fullCalendar({

@@ -1,0 +1,217 @@
+$(document).ready ->
+
+  select = (start, end) ->
+    `var d`
+    `var year`
+    `var month`
+    `var day`
+    `var hour`
+    `var min`
+    title = window.prompt('title')
+    start_time = start.unix()
+    d = new Date(start_time * 1000)
+    year = d.getYear() + 1900
+    month = d.getMonth() + 1
+    day = d.getDate()
+    hour = if d.getHours() < 10 then '0' + d.getHours() else d.getHours()
+    min = if d.getMinutes() < 10 then '0' + d.getMinutes() else d.getMinutes()
+    moment_start = year + '-' + month + '-' + day + ' ' + hour + ':' + min
+    start_time = moment(moment_start).add(-9, 'hour').format('YYYY-MM-DD HH:mm')
+    end_time = end.unix()
+    d = new Date(end_time * 1000)
+    year = d.getYear() + 1900
+    month = d.getMonth() + 1
+    day = d.getDate()
+    hour = if d.getHours() < 10 then '0' + d.getHours() else d.getHours()
+    min = if d.getMinutes() < 10 then '0' + d.getMinutes() else d.getMinutes()
+    moment_end = year + '-' + month + '-' + day + ' ' + hour + ':' + min
+    end_time = moment(moment_end).add(-9, 'hour').format('YYYY-MM-DD HH:mm')
+    data = event:
+      title: title
+      start: start_time
+      end: end_time
+      allday: false
+    $.ajax
+      type: 'POST'
+      url: '/events'
+      data: data
+      success: ->
+        calendar.fullCalendar 'refetchEvents'
+        return
+     calendar.fullCalendar 'unselect'
+    return
+
+  calendar = $('#calendar').fullCalendar(
+    header:
+      left: 'prev,next today'
+      center: 'title'
+      right: 'month,agendaWeek,agendaDay'
+    axisFormat: 'H:mm'
+    timeFormat: 'H:mm'
+    monthNames: [
+      '１月'
+      '２月'
+      '３月'
+      '４月'
+      '５月'
+      '６月'
+      '７月'
+      '８月'
+      '９月'
+      '１０月'
+      '１１月'
+      '１２月'
+    ]
+    monthNamesShort: [
+      '１月'
+      '２月'
+      '３月'
+      '４月'
+      '５月'
+      '６月'
+      '７月'
+      '８月'
+      '９月'
+      '１０月'
+      '１１月'
+      '１２月'
+    ]
+    dayNames: [
+      '日曜日'
+      '月曜日'
+      '火曜日'
+      '水曜日'
+      '木曜日'
+      '金曜日'
+      '土曜日'
+    ]
+    dayNamesShort: [
+      '日'
+      '月'
+      '火'
+      '水'
+      '木'
+      '金'
+      '土'
+    ]
+    events: 'events'
+    editable: true
+    selectable: true
+    selectHelper: true
+    ignoreTimezone: false
+    select: select
+    buttonText:
+      prev: '<'
+      next: '>'
+      prevYear: '<<'
+      nextYear: '>>'
+      today: '今日'
+      month: '月'
+      week: '週'
+      day: '日'
+    height: 800
+    defaultView: 'agendaWeek'
+    eventLimit: true
+    firstDay: 0
+    weekends: true
+    weekMode: 'fixed'
+    weekNumbers: false
+    slotDuration: '00:30:00'
+    snapDuration: '00:30:00'
+    minTime: '00:00:00'
+    maxTime: '24:00:00'
+    defaultTimedEventDuration: '10:00:00'
+    allDaySlot: false
+    allDayText: 'allday'
+    slotMinutes: 30
+    snapMinutes: 30
+    firstHour: 9
+    eventClick: (event) ->
+      #イベントをクリックしたときに実行
+      id = event.id
+      show_url = '/events/' + id
+      location.href = show_url
+      return
+    eventResize: (event) ->
+      `var year`
+      `var month`
+      `var day`
+      `var hour`
+      `var min`
+      #イベントをサイズ変更した際に実行
+      id = event.id
+      update_url = '/event/' + id
+      event_start_time = event._start._d
+      year = event_start_time.getYear() + 1900
+      month = event_start_time.getMonth() + 1
+      day = event_start_time.getDate()
+      hour = if event_start_time.getHours() < 10 then '0' + event_start_time.getHours() else event_start_time.getHours()
+      min = if event_start_time.getMinutes() < 10 then '0' + event_start_time.getMinutes() else event_start_time.getMinutes()
+      moment_start = year + '-' + month + '-' + day + ' ' + hour + ':' + min
+      start_time = moment(moment_start).add(-9, 'hour').format('YYYY-MM-DD HH:mm')
+      event_end_time = event._end._d
+      year = event_end_time.getYear() + 1900
+      month = event_end_time.getMonth() + 1
+      day = event_end_time.getDate()
+      hour = if event_end_time.getHours() < 10 then '0' + event_end_time.getHours() else event_end_time.getHours()
+      min = if event_end_time.getMinutes() < 10 then '0' + event_end_time.getMinutes() else event_end_time.getMinutes()
+      moment_end = year + '-' + month + '-' + day + ' ' + hour + ':' + min
+      end_time = moment(moment_end).add(-9, 'hour').format('YYYY-MM-DD HH:mm')
+      data = event:
+        title: event.title
+        start: start_time
+        end: end_time
+        allday: false
+      $.ajax
+        type: 'PATCH'
+        url: update_url
+        data: data
+        success: ->
+          calendar.fullCalendar 'refetchEvents'
+          return
+      calendar.fullCalendar 'unselect'
+      return
+    eventDrop: (event) ->
+      `var year`
+      `var month`
+      `var day`
+      `var hour`
+      `var min`
+      #イベントをドラッグ&ドロップした際に実行
+      id = event.id
+      update_url = 'event'
+      event_start_time = event._start._d
+      year = event_start_time.getYear() + 1900
+      month = event_start_time.getMonth() + 1
+      day = event_start_time.getDate()
+      hour = if event_start_time.getHours() < 10 then '0' + event_start_time.getHours() else event_start_time.getHours()
+      min = if event_start_time.getMinutes() < 10 then '0' + event_start_time.getMinutes() else event_start_time.getMinutes()
+      moment_start = year + '-' + month + '-' + day + ' ' + hour + ':' + min
+      start_time = moment(moment_start).add(-9, 'hour').format('YYYY-MM-DD HH:mm')
+      event_end_time = event._end._d
+      year = event_end_time.getYear() + 1900
+      month = event_end_time.getMonth() + 1
+      day = event_end_time.getDate()
+      hour = if event_end_time.getHours() < 10 then '0' + event_end_time.getHours() else event_end_time.getHours()
+      min = if event_end_time.getMinutes() < 10 then '0' + event_end_time.getMinutes() else event_end_time.getMinutes()
+      moment_end = year + '-' + month + '-' + day + ' ' + hour + ':' + min
+      end_time = moment(moment_end).add(-9, 'hour').format('YYYY-MM-DD HH:mm')
+      data = event:
+        title: event.title
+        start: start_time
+        end: end_time
+        allday: false
+      $.ajax
+        type: 'PATCH'
+        url: update_url
+        data: data
+        success: ->
+          calendar.fullCalendar 'refetchEvents'
+          return
+      calendar.fullCalendar 'unselect'
+      return
+  )
+  return
+
+# ---
+# generated by js2coffee 2.2.0
