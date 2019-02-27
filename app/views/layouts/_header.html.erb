@@ -21,7 +21,6 @@
         📧
       </li>
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">マイページ</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">ユーザー名</a>
             <div class="dropdown-divider"></div>
@@ -61,6 +60,9 @@
             <%= link_to "マイページ", user_show_path(user_id: current_user), class:"nav-link" %>
           </li>
           <li class="nav-item">
+            <%= link_to "お気に入りコーチ", favorite_coach_path(user_id: current_user.id) %>
+          </li>
+          <li class="nav-item">
             <%= link_to "ログアウト", logout_path, method: "DELETE", class:"nav-link" %>
           </li>
         <% end %>
@@ -76,8 +78,6 @@
   </ul>
 
         <a href="/tests/test">テスト</a>
-        <a href="/tests/mypage">マイページ</a>
-        <a href="/tests/favoriteCoach">お気に入りコーチ</a>
         <a href="/tests/loginPage">ログイン</a>
         <a href="/tests/questionsPage">Q&A</a>
         <a href="/tests/reservationManagementPage">予約管理</a>

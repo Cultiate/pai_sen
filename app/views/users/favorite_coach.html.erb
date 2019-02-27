@@ -31,6 +31,10 @@
       </tr>
     </thead>
     <tbody>
+      <% @favorite_coaches.each do |fav_coach| %>
+        <% @coach = Coach.find_by(id: fav_coach.coach_id) %>
+          <%= @coach.name %>
+      <% end %>
       <tr>
         <td><img src="/assets/gitchan.jpg" width="100px" height="50px"　class="rounded-circle"></td>
         <td>名無しさん</td>

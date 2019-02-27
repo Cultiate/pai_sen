@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   delete "users/:user_id" => "users#destroy", as: :user_destory
   get "detail/users/:user_id" => "users#detail", as: :user_detail
   patch "detail/users/:user_id" => "users#detail_update", as: :user_detail_update
-  get "message_show/users/:user_id" => "users#message_show", as: :users_message_show
+  get "message_show/users/:user_id" => "users#message_show", as: :user_message_show
+  get "favorite_coach/:user_id" => "users#favorite_coach", as: :favorite_coach
 
   post "coaches" => "coaches#create", as: :coaches
   get "coaches/new" => "coaches#new", as: :new_coach

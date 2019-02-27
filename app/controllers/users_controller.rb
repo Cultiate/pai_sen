@@ -58,6 +58,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def favorite_coach
+    @favorite_coaches = Favorite.where(user_id: params[:user_id])
+  end
+
   private
 
     def user_params
