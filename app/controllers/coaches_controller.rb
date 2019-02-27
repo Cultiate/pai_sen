@@ -47,7 +47,7 @@ class CoachesController < ApplicationController
 
     def coach_params
       params.require(:coach).permit(
-        :name, :kana, :email, :birthday, :status, :company, :business, :occupation, :greeting,
+        :name, :kana, :email, :birthday, :status, :company, :business, :occupation, :greeting, :coaching_fee,
         :password, :password_confirmation, :remember_digest, :activation_digest, :activated, :activated_at,
         :coach_image, :provider, :uid, :reset_digest, :reset_sent_at
       )

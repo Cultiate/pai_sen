@@ -10,7 +10,7 @@ class CreateCoaches < ActiveRecord::Migration[5.2]
       t.string :business
       t.string :occupation
       t.text :greeting
-      t.integer :coaching_fee
+      t.string :coaching_fee
       t.string :password_digest
       t.string :remember_digest
       t.string :activation_digest
