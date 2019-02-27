@@ -16,7 +16,7 @@ class AccountActivationsController < ApplicationController
 
   def coach_edit
     @coach = Coach.find_by(email: params[:email])
-    if @coach && !@coach.activated? && @coach.authenticated_coach?(:activation, params[:coach_id])
+    if @coach && !@coach.activated? 
 
       @coach.update_attribute(:activated, true)
       @coach.update_attribute(:activated_at, Time.zone.now)
