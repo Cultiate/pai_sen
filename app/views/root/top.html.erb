@@ -1,3 +1,18 @@
+<main>
+<% @coaches.each do |coach| %>
+  <%= coach.name %>
+  <% if Favorite.find_by(user_id: current_user, coach_id: coach.id) %>
+    <%= link_to coach_c_favorites_path(coach_id: coach.id), coach_id: coach.id, method: "DELETE" do %>
+      あ
+    <% end %>
+  <% elsif !Favorite.find_by(user_id: current_user, coach_id: coach.id) %>
+    <%= link_to coach_favorites_path(coach_id: coach.id), coach_id: coach.id, method: "POST" do %>
+      い
+    <% end %>
+  <% end %>
+<% end %>
+</main>
+<!--
 main#content[style="margin-top:100px;"]
   section#firstview[style="background:lightblue; padding:40px 0;"]
     .container
@@ -30,7 +45,7 @@ main#content[style="margin-top:100px;"]
           | ・時間帯
         .dropdown
           button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle[type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-            |  ドロップダウンボタン 
+            |  ドロップダウンボタン
           .dropdown-menu[aria-labelledby="dropdownMenuButton1"]
             a.dropdown-item[href="#"]
               | メニュー1
@@ -45,7 +60,7 @@ main#content[style="margin-top:100px;"]
           | -
         .dropdown
           button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle[type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-            |  ドロップダウンボタン2 
+            |  ドロップダウンボタン2
           .dropdown-menu[aria-labelledby="dropdownMenuButton2"]
             a.dropdown-item[href="#"]
               | メニュー11
@@ -58,7 +73,7 @@ main#content[style="margin-top:100px;"]
               | その他リンク3
       .card.border-secondary.mb-3[style="max-width: 100%; margin-top:40px;"]
         .card-header
-          | icon 業種 
+          | icon 業種
         .card-body.text-secondary
           .form-check.form-check-inline
             input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
@@ -186,7 +201,7 @@ main#content[style="margin-top:100px;"]
               | アパレル
       .card.border-secondary.mb-3[style="max-width: 100%; margin-top:40px;"]
         .card-header
-          | icon 職種 
+          | icon 職種
         .card-body.text-secondary
           .form-check.form-check-inline
             input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
@@ -293,7 +308,38 @@ main#content[style="margin-top:100px;"]
               .row[style="margin-top:40px;"]
                 .card.border-secondary.mb-3[style="max-width: 30%; margin:1%;"]
                   .card-header
-                    | No.1 
+                    | No.1
+                  .card-body.text-secondary.row
+                    .col-sm-6
+                      img.rounded-circle.w-100[src="/default.jpg"]
+                    .col-sm-6
+                      p
+                        | 名前：
+                        br
+                        | 重神咲也
+                      p
+                        | 会社名：
+                        br
+                        | SENPUKI
+                    .col-12.text-center
+                      p
+                        | ⭐️⭐️⭐️⭐️⭐️ 5.0
+                      p
+                        | 面談回数：14回
+                      p
+                        | ITコンサル
+                      p
+                        | マーケティング
+                      p
+                        | 神戸大学
+                    .col-12.row[style=""]
+                      p[style="width:95%;"]
+
+                      a[href="#" style="width:5%;"]
+                        | ❤️
+                .card.border-secondary.mb-3[style="max-width: 30%; margin:1%;"]
+                  .card-header
+                    | No.2
                   .card-body.text-secondary.row
                     .col-sm-6
                       img.rounded-circle.w-100[src="/default.jpg"]
@@ -323,37 +369,7 @@ main#content[style="margin-top:100px;"]
                         | ❤️
                 .card.border-secondary.mb-3[style="max-width: 30%; margin:1%;"]
                   .card-header
-                    | No.2 
-                  .card-body.text-secondary.row
-                    .col-sm-6
-                      img.rounded-circle.w-100[src="/default.jpg"]
-                    .col-sm-6
-                      p
-                        | 名前：
-                        br
-                        | 重神咲也
-                      p
-                        | 会社名：
-                        br
-                        | SENPUKI
-                    .col-12.text-center
-                      p
-                        | ⭐️⭐️⭐️⭐️⭐️ 5.0
-                      p
-                        | 面談回数：14回
-                      p
-                        | ITコンサル
-                      p
-                        | マーケティング
-                      p
-                        | 神戸大学
-                    .col-12.row[style=""]
-                      p[style="width:95%;"]
-                      a[href="#" style="width:5%;"]
-                        | ❤️
-                .card.border-secondary.mb-3[style="max-width: 30%; margin:1%;"]
-                  .card-header
-                    | No.3 
+                    | No.3
                   .card-body.text-secondary.row
                     .col-sm-6
                       img.rounded-circle.w-100[src="/default.jpg"]
@@ -385,7 +401,7 @@ main#content[style="margin-top:100px;"]
               .row[style="margin-top:40px;"]
                 .card.border-secondary.mb-3[style="max-width: 30%; margin:1%;"]
                   .card-header
-                    | No.1 
+                    | No.1
                   .card-body.text-secondary.row
                     .col-sm-6
                       img.rounded-circle.w-100[src="/mensa-logo.jpeg"]
@@ -415,7 +431,7 @@ main#content[style="margin-top:100px;"]
                         | ❤️
                 .card.border-secondary.mb-3[style="max-width: 30%; margin:1%;"]
                   .card-header
-                    | No.2 
+                    | No.2
                   .card-body.text-secondary.row
                     .col-sm-6
                       img.rounded-circle.w-100[src="/mensa-logo.jpeg"]
@@ -445,7 +461,7 @@ main#content[style="margin-top:100px;"]
                         | ❤️
                 .card.border-secondary.mb-3[style="max-width: 30%; margin:1%;"]
                   .card-header
-                    | No.3 
+                    | No.3
                   .card-body.text-secondary.row
                     .col-sm-6
                       img.rounded-circle.w-100[src="/mensa-logo.jpeg"]
@@ -471,6 +487,7 @@ main#content[style="margin-top:100px;"]
                         | 神戸大学
                     .col-12.row[style=""]
                       p[style="width:95%;"]
+                      -
                       a[href="#" style="width:5%;"]
                         | ❤️
           button.btn.btn-outline-success.my-2.my-sm-0[style=""]
@@ -537,4 +554,4 @@ main#content[style="margin-top:100px;"]
                         | 会社名：SENPUKI
                     .col-12.text-center
                       p[style="font-size:90%; margin-top:3%;"]
-                        | ⭐️⭐️⭐️⭐️⭐️ 5.0　面談回数：14回
+                        | ⭐️⭐️⭐️⭐️⭐️ 5.0　面談回数：14回 -->

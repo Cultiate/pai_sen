@@ -11,7 +11,8 @@ class User < ApplicationRecord
             foreign_key: "to_id", dependent: :destroy
   has_many :sent_messages, through: :from_messages, source: :from
   has_many :received_messages, through: :to_messages, source: :to
-
+  has_many :coaches, through: :favorites
+  has_many :favorites
 
   def self.from_omniauth(auth)
     user = User.where('email = ?', auth.info.email).first
@@ -83,7 +84,7 @@ class User < ApplicationRecord
   def send_message(other_user, room_id, content)
     from_messages.create!(to_id: other_user.id, room_id: room_id, content: content)
   end
-  
+
   private
 
     def downcase_email
