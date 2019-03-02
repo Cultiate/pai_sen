@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   get "users/:user_id/history" => "users#coaching_history", as: :history_user
+  get "users/:user_id/reserve_coaching" => "users#reserve_coaching", as: :reserve_user
 
   post "users" => "users#create", as: :users
   get "users/new" => "users#new", as: :new_user

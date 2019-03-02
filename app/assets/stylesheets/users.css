@@ -57,7 +57,7 @@
 }
 #coaching_history .content .sidebar {
   width: 25%;
-  margin: 0 5% 5%;
+  margin: 0 2.5% 5%;
   max-width: 30%;
   float: left;
 }
@@ -67,9 +67,43 @@
   border-radius: 50%;
 }
 #coaching_history .content .mainbar {
-  width: 50%;
+  width: 60%;
   margin: 0 5% 5%;
-  max-width: 60%;
+  max-width: 70%;
+  float: left;
+  text-align: left;
+}
+#reserve_coaching {
+  margin: 10%;
+}
+#reserve_coaching .title {
+  margin-bottom: 5%;
+}
+#reserve_coaching .subtitle {
+  margin: 10% 0 5%;
+}
+#reserve_coaching .bg-lightgray {
+  background-color: rgba(0,0,0,0.05);
+}
+#reserve_coaching .content {
+  margin: 5%;
+  overflow: hidden;
+}
+#reserve_coaching .content .sidebar {
+  width: 25%;
+  margin: 0 2.5% 5%;
+  max-width: 30%;
+  float: left;
+}
+#reserve_coaching .content .sidebar .user-icon {
+  width: 80%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
+#reserve_coaching .content .mainbar {
+  width: 60%;
+  margin: 0 5% 5%;
+  max-width: 70%;
   float: left;
   text-align: left;
 }
