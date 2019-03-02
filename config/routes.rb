@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'tests/topDemoPage'
   get 'tests/chatroom'
 
+
+  get "users/:user_id/history" => "users#coaching_history", as: :history_user
+
   post "users" => "users#create", as: :users
   get "users/new" => "users#new", as: :new_user
   get "users/:user_id/edit" => "users#edit", as: :edit_user

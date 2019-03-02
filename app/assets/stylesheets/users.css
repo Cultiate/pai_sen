@@ -39,3 +39,37 @@
 #mypage .mainbar .profile-edit {
   width: 100%;
 }
+#coaching_history {
+  margin: 10%;
+}
+#coaching_history .title {
+  margin-bottom: 5%;
+}
+#coaching_history .subtitle {
+  margin: 10% 0 5%;
+}
+#coaching_history .bg-lightgray {
+  background-color: rgba(0,0,0,0.05);
+}
+#coaching_history .content {
+  margin: 5%;
+  overflow: hidden;
+}
+#coaching_history .content .sidebar {
+  width: 25%;
+  margin: 0 5% 5%;
+  max-width: 30%;
+  float: left;
+}
+#coaching_history .content .sidebar .user-icon {
+  width: 80%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
+#coaching_history .content .mainbar {
+  width: 50%;
+  margin: 0 5% 5%;
+  max-width: 60%;
+  float: left;
+  text-align: left;
+}
