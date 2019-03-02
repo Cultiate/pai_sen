@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root "root#top"
+  get "/contact" => "root#contact"
 
   get 'tests/test'
   get 'tests/mypage'
