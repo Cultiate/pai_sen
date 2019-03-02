@@ -12,3 +12,18 @@
   color: #800080;
   background-color: #fff;
 }
+#faq .content {
+  width: 60%;
+  margin: auto;
+}
+#faq .card-header {
+  background-color: transparent;
+}
+#faq .q {
+  color: #800080;
+  font-size: 200%;
+}
+#faq .a {
+  color: #ffa500;
+  font-size: 200%;
+}
