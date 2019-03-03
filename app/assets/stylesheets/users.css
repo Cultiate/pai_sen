@@ -14,19 +14,19 @@
   background-color: rgba(0,0,0,0.05);
   float: left;
 }
-#mypage .sidebar .content {
+#mypage .sidebar .user-profile {
   margin: 3% 10%;
 }
-#mypage .sidebar .user-icon {
+#mypage .sidebar .user-profile .user-icon {
   width: 80%;
   margin-bottom: 10%;
   border-radius: 50%;
 }
-#mypage .sidebar .detail-profile {
+#mypage .sidebar .user-profile .detail-profile {
   margin-top: 5%;
   text-align: left;
 }
-#mypage .sidebar .detail-profile p {
+#mypage .sidebar .user-profile p {
   margin: 0 10%;
 }
 #mypage .mainbar {
@@ -83,7 +83,7 @@
   margin: 10% 0 5%;
 }
 #reserve_coaching .bg-lightgray {
-  background-color: rgba(0,0,0,0.05);
+  background-color: #d3d3d3;
 }
 #reserve_coaching .content {
   margin: 5%;

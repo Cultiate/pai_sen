@@ -1,3 +1,54 @@
+.btn.btn-outline-primary {
+  border-color: #67c5ca;
+  color: #67c5ca;
+}
+.btn.btn-outline-primary:hover {
+  background-color: #67c5ca;
+  border-color: #67c5ca;
+  color: #fff;
+}
+.btn.btn-primary {
+  background-color: #67c5ca;
+  border-color: #67c5ca;
+  color: #fff;
+}
+.btn.btn-primary:hover {
+  background-color: transparent;
+  border-color: #67c5ca;
+  color: #67c5ca;
+}
+#top #search {
+  width: 90%;
+  margin: auto;
+}
+#top #search .search-content {
+  border: 2px solid #f5a04e;
+  padding: 5%;
+}
+#top #search .search-content .bg-lightgray {
+  background-color: rgba(0,0,0,0.05);
+  padding: 2%;
+}
+#top #index {
+  text-align: center;
+}
+#top #index .active .btn.btn-outline-primary {
+  background-color: #67c5ca;
+  border-color: #67c5ca;
+  color: #fff;
+}
+#top #index .coach-profile {
+  background-color: rgba(0,0,0,0.05);
+  max-width: 33%;
+  width: 26%;
+  padding: 2%;
+  margin: auto;
+}
+#top #index .coach-profile .user-icon {
+  width: 80%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
 #contact form input,
 #contact form select,
 #contact form textarea {
