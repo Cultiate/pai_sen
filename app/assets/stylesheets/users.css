@@ -9,7 +9,7 @@
 }
 #mypage .sidebar {
   width: 25%;
-  margin: 0 5%;
+  margin: 0 2.5% 5%;
   max-width: 30%;
   background-color: rgba(0,0,0,0.05);
   float: left;
@@ -106,4 +106,35 @@
   max-width: 70%;
   float: left;
   text-align: left;
+}
+#settings .content {
+  margin: 5%;
+  overflow: hidden;
+}
+#settings .content .sidebar {
+  width: 25%;
+  margin: 0 2.5% 5%;
+  max-width: 30%;
+  background-color: #d3d3d3;
+  float: left;
+}
+#settings .content .sidebar li {
+  margin-bottom: 5%;
+}
+#settings .content .mainbar {
+  width: 60%;
+  margin: 0 5% 5%;
+  max-width: 70%;
+  float: left;
+  text-align: left;
+}
+#settings .content form label {
+  display: block;
+}
+#settings .content form .form-control {
+  display: inline-block;
+  width: 90%;
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
+  color: #000;
 }
