@@ -2,14 +2,14 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails', '~> 5.2.1'
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap','~> 4.0.0.alpha3'
+gem 'bootstrap','~> 4.3.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -48,9 +48,3 @@ gem 'simple_calendar', '~> 2.0'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-
-# slim
-gem 'slim-rails'
-
-# html → slim
-gem 'html2slim'

@@ -1,0 +1,140 @@
+#mypage {
+  margin: 5%;
+}
+#mypage .title {
+  margin-bottom: 5%;
+}
+#mypage .subtitle {
+  margin: 10% 0 5%;
+}
+#mypage .sidebar {
+  width: 25%;
+  margin: 0 2.5% 5%;
+  max-width: 30%;
+  background-color: rgba(0,0,0,0.05);
+  float: left;
+}
+#mypage .sidebar .user-profile {
+  margin: 3% 10%;
+}
+#mypage .sidebar .user-profile .user-icon {
+  width: 80%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
+#mypage .sidebar .user-profile .detail-profile {
+  margin-top: 5%;
+  text-align: left;
+}
+#mypage .sidebar .user-profile p {
+  margin: 0 10%;
+}
+#mypage .mainbar {
+  width: 50%;
+  margin: 0 5%;
+  max-width: 60%;
+  float: left;
+  text-align: left;
+}
+#mypage .mainbar .profile-edit {
+  width: 100%;
+}
+#coaching_history {
+  margin: 10%;
+}
+#coaching_history .title {
+  margin-bottom: 5%;
+}
+#coaching_history .subtitle {
+  margin: 10% 0 5%;
+}
+#coaching_history .bg-lightgray {
+  background-color: rgba(0,0,0,0.05);
+}
+#coaching_history .content {
+  margin: 5%;
+  overflow: hidden;
+}
+#coaching_history .content .sidebar {
+  width: 25%;
+  margin: 0 2.5% 5%;
+  max-width: 30%;
+  float: left;
+}
+#coaching_history .content .sidebar .user-icon {
+  width: 80%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
+#coaching_history .content .mainbar {
+  width: 60%;
+  margin: 0 5% 5%;
+  max-width: 70%;
+  float: left;
+  text-align: left;
+}
+#reserve_coaching {
+  margin: 10%;
+}
+#reserve_coaching .title {
+  margin-bottom: 5%;
+}
+#reserve_coaching .subtitle {
+  margin: 10% 0 5%;
+}
+#reserve_coaching .bg-lightgray {
+  background-color: #d3d3d3;
+}
+#reserve_coaching .content {
+  margin: 5%;
+  overflow: hidden;
+}
+#reserve_coaching .content .sidebar {
+  width: 25%;
+  margin: 0 2.5% 5%;
+  max-width: 30%;
+  float: left;
+}
+#reserve_coaching .content .sidebar .user-icon {
+  width: 80%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
+#reserve_coaching .content .mainbar {
+  width: 60%;
+  margin: 0 5% 5%;
+  max-width: 70%;
+  float: left;
+  text-align: left;
+}
+#settings .content {
+  margin: 5%;
+  overflow: hidden;
+}
+#settings .content .sidebar {
+  width: 25%;
+  margin: 0 2.5% 5%;
+  max-width: 30%;
+  background-color: #d3d3d3;
+  float: left;
+}
+#settings .content .sidebar li {
+  margin-bottom: 5%;
+}
+#settings .content .mainbar {
+  width: 60%;
+  margin: 0 5% 5%;
+  max-width: 70%;
+  float: left;
+  text-align: left;
+}
+#settings .content form label {
+  display: block;
+}
+#settings .content form .form-control {
+  display: inline-block;
+  width: 90%;
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
+  color: #000;
+}

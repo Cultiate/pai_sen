@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root "root#top"
+  get "/contact" => "root#contact"
 
   get 'tests/test'
   get 'tests/mypage'
@@ -11,6 +12,11 @@ Rails.application.routes.draw do
   get 'tests/contactUsPage'
   get 'tests/topDemoPage'
   get 'tests/chatroom'
+
+
+  get "users/:user_id/history" => "users#coaching_history", as: :history_user
+  get "users/:user_id/reserve_coaching" => "users#reserve_coaching", as: :reserve_user
+  get "users/:user_id/settings" => "users#settings", as: :settings_user
 
   post "users" => "users#create", as: :users
   get "users/new" => "users#new", as: :new_user
