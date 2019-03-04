@@ -83,7 +83,7 @@
   margin: 10% 0 5%;
 }
 #reserve_coaching .bg-lightgray {
-  background-color: #d3d3d3;
+  background-color: rgba(0,0,0,0.05);
 }
 #reserve_coaching .content {
   margin: 5%;
@@ -115,7 +115,7 @@
   width: 25%;
   margin: 0 2.5% 5%;
   max-width: 30%;
-  background-color: #d3d3d3;
+  background-color: rgba(0,0,0,0.05);
   float: left;
 }
 #settings .content .sidebar li {
@@ -134,7 +134,82 @@
 #settings .content form .form-control {
   display: inline-block;
   width: 90%;
-  background-color: #d3d3d3;
-  border-color: #d3d3d3;
+  background-color: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.05);
   color: #000;
+}
+#chatroom {
+  text-align: center;
+}
+#chatroom .content {
+  overflow: hidden;
+  border: 1px solid #808080;
+  border-bottom: 5px solid rgba(0,0,0,0.3);
+}
+#chatroom .content .user-icon {
+  width: 100%;
+  margin: auto;
+  border-radius: 50%;
+}
+#chatroom .content .sidebar {
+  width: 25%;
+  margin: 0;
+  max-width: 25%;
+  float: left;
+}
+#chatroom .content .sidebar .border-bottom {
+  border-color: #808080 !important;
+}
+#chatroom .content .sidebar .chat-list {
+  border-bottom: 1px solid #808080;
+}
+#chatroom .content .sidebar .chat-list .chat-list-name {
+  text-align: left;
+}
+#chatroom .content .sidebar .chat-list .chat-list-name p {
+  margin-bottom: 0;
+  line-height: 0.5;
+  margin-top: 10%;
+}
+#chatroom .content .sidebar .chat-list .chat-list-name .company {
+  font-size: 10px;
+}
+#chatroom .content .sidebar .chat-list .chat-list-name .date {
+  font-size: 10px;
+  color: #606060;
+}
+#chatroom .content .mainbar {
+  width: 75%;
+  max-width: 75%;
+  float: left;
+  text-align: left;
+  border-left: 1px solid #808080;
+}
+#chatroom .content .mainbar .border-bottom {
+  border-color: #808080 !important;
+}
+#chatroom .content .mainbar .message {
+  margin: 2% 3%;
+  padding: 2% 3%;
+}
+#chatroom .content .mainbar .left-message {
+  background-color: rgba(0,0,0,0.05);
+  max-width: 60%;
+}
+#chatroom .content .mainbar .right-message {
+  background-color: #67c5ca;
+  color: #fff;
+  max-width: 60%;
+  margin-left: 40%;
+}
+#chatroom .content .mainbar .submit {
+  background-color: rgba(0,0,0,0.05);
+  padding: 2% 5%;
+}
+#chatroom .content .mainbar .submit textarea {
+  color: #808080;
+  background-color: #fff;
+  border: none;
+  padding: 1.5% 5%;
+  resize: none;
 }
