@@ -36,8 +36,6 @@
   </nav>
 </header>
 
-
-
 <div class="for_develop" style="border-bottom:3px double gray;">
   <ul class="row">
           <% unless logged_in? || coach_logged_in? %>
@@ -57,10 +55,13 @@
 
         <% if logged_in? %>
           <li class="nav-item">
-            <%= link_to "マイページ", user_show_path(user_id: current_user), class:"nav-link" %>
+            <%= link_to "マイページ", user_show_path(user_id: current_user.id), class:"nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "お気に入りコーチ", favorite_coach_path(user_id: current_user.id) %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "メッセージ一覧", user_msg_index_path(id: current_user.id) %>
           </li>
           <li class="nav-item">
             <%= link_to "ログアウト", logout_path, method: "DELETE", class:"nav-link" %>
@@ -83,5 +84,4 @@
         <a href="/tests/reservationManagementPage">予約管理</a>
         <a href="/tests/contactUsPage">問い合わせ</a>
         <a href="/tests/topDemoPage">トップ</a>
-        <a href="/tests/chatroom">チャット</a>
 </div>

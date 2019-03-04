@@ -1,0 +1,13 @@
+<br>
+<br>
+<br>
+<main>
+<% if @rooms.present? %>
+  <% @rooms.each do |room| %>
+    <% @coach = Coach.find_by(id: room.coach_id) %>
+      <%= @coach.name %>
+  <% end %>
+<% else %>
+  メッセージはありません。
+<% end %>
+</main>

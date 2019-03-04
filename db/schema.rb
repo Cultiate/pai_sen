@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_114833) do
+ActiveRecord::Schema.define(version: 2019_02_27_202602) do
 
   create_table "coaches", force: :cascade do |t|
     t.string "name"
@@ -64,13 +64,15 @@ ActiveRecord::Schema.define(version: 2019_02_27_114833) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "coach_id"
+    t.integer "room_id"
     t.text "content"
-    t.integer "from_id"
-    t.integer "to_id"
-    t.string "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["room_id", "created_at"], name: "index_messages_on_room_id_and_created_at"
+    t.index ["coach_id"], name: "index_messages_on_coach_id"
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -80,6 +82,16 @@ ActiveRecord::Schema.define(version: 2019_02_27_114833) do
     t.string "timenumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "coach_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id"], name: "index_rooms_on_coach_id"
+    t.index ["user_id", "coach_id"], name: "index_rooms_on_user_id_and_coach_id", unique: true
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

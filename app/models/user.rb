@@ -5,14 +5,10 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }, on: :update_password
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, on: :update_password
-  has_many :from_messages, class_name: "Message",
-            foreign_key: "from_id", dependent: :destroy
-  has_many :to_messages, class_name: "Message",
-            foreign_key: "to_id", dependent: :destroy
-  has_many :sent_messages, through: :from_messages, source: :from
-  has_many :received_messages, through: :to_messages, source: :to
   has_many :coaches, through: :favorites
   has_many :favorites
+  has_many :messages
+  has_many :rooms
 
   def self.from_omniauth(auth)
     user = User.where('email = ?', auth.info.email).first

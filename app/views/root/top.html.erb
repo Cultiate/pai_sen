@@ -1,6 +1,6 @@
 <main>
 <% @coaches.each do |coach| %>
-  <%= coach.name %>
+  <%= link_to coach.name, coach_show_path(coach_id: coach.id) %>
   <%= coach.company %>
   <%= coach.coaching_fee %>
   <% if Favorite.find_by(user_id: current_user, coach_id: coach.id) %>

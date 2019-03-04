@@ -7,4 +7,11 @@
     <p class="card-text">大学 ： 甲南大学　知能情報学部　知能情報学科</p>
     <p class="card-text">志望業界 ： IT,金融,人材</p>
   </div>
+
+  <%= form_for @message do |f| %>
+    <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" %>
+    <%= f.hidden_field :room_id, :value => @room.id %>
+    <br>
+    <%= f.submit "投稿する" %>
+  <% end %>
 </div>

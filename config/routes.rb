@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   delete "users/:user_id" => "users#destroy", as: :user_destory
   get "detail/users/:user_id" => "users#detail", as: :user_detail
   patch "detail/users/:user_id" => "users#detail_update", as: :user_detail_update
-  get "message_show/users/:user_id" => "users#message_show", as: :user_message_show
   get "favorite_coach/:user_id" => "users#favorite_coach", as: :favorite_coach
 
   post "coaches" => "coaches#create", as: :coaches
@@ -44,6 +43,12 @@ Rails.application.routes.draw do
 
   resources :events
 
+  get "messages/user_id" => "messages#user_index", as: :user_msg_index
+  get "messages/coach_id" => "messages#coach_index", as: :coach_msg_index
+  resources :messages, :only => [:create]
+
+  resources :rooms, :only => [:create]
+
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
@@ -51,8 +56,6 @@ Rails.application.routes.draw do
   get "coach_login" => "coach_sessions#new"
   post "coach_login" => "coach_sessions#create"
   delete "coach_logout" => "coach_sessions#destroy"
-
-  mount ActionCable.server => '/cable'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
