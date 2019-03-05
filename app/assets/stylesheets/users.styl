@@ -1,3 +1,6 @@
+lightgray = rgba(0,0,0,.05)
+primary = #67c5ca
+
 #mypage
   margin 5%
 
@@ -138,4 +141,73 @@
         background-color lightgray
         border-color lightgray
         color #000
+
+#chatroom
+  text-align center
+  .content
+    overflow hidden
+    border 1px solid gray
+    border-bottom 5px solid rgba(0,0,0,.3)
+
+    .user-icon
+      width 100%
+      margin auto
+      border-radius 50%
+    .sidebar
+      width 25%
+      margin 0
+      max-width 25%
+      float left
+
+
+      .border-bottom
+        border-color gray !important
       
+      .chat-list
+        border-bottom 1px solid gray
+        .chat-list-name
+          text-align left
+          p
+            margin-bottom 0
+            line-height .5
+            margin-top: 10%;
+          .company
+            font-size 10px
+          .date
+            font-size 10px
+            color #606060
+
+    .mainbar
+      width 75%
+      max-width 75%
+      float left
+      text-align left
+      border-left 1px solid gray
+
+      .border-bottom
+        border-color gray !important
+
+      .message
+        margin 2% 3%
+        padding 2% 3%
+      
+      .left-message 
+        background-color lightgray
+        max-width 60%
+        
+      .right-message
+        background-color primary
+        color #fff
+        max-width 60%
+        margin-left 40%
+      
+      .submit
+        background-color lightgray
+        padding 2% 5%
+          
+        textarea
+          color gray
+          background-color #fff
+          border none
+          padding 1.5% 5%
+          resize none
