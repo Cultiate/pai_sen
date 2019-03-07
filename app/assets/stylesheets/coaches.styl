@@ -1,3 +1,5 @@
+lightgray = rgba(0,0,0,.05)
+primary = #67c5ca
 orange = #f5a04e
 
 #mypage_coach
@@ -81,3 +83,44 @@ orange = #f5a04e
           border-width 2px !important
           border-color orange !important
   
+#reservation_coach
+  width 80%
+  margin auto
+  text-align center
+
+  .reservations 
+    text-align left
+
+    .card
+      margin 5% 0 
+      border none
+      background-color lightgray
+
+      .card-header
+        border-bottom none 
+      .show
+        background-color lightgray !important
+        .card-body
+          .tag
+            margin 0 2%
+            color primary 
+
+    a
+      width auto
+      &[aria-expanded="false"]:after
+        content url("/icons/plus.png")
+        margin-top 3%
+        margin-left 90%
+      &[aria-expanded="true"]:after 
+        content url("/icons/minus.png")
+        margin-top 3%
+        margin-left 90%    
+
+    .reservation
+      .user-icon
+        margin-bottom 0
+      .reserver-icon
+        width 10%
+        margin-right 5%
+      .reserver-info
+        width 70%
