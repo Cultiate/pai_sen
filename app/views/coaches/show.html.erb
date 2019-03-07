@@ -1,17 +1,48 @@
+<main id="mypage_coach">
+  <div class="overflow-hidden text-center">
+    <h2 class="title">プロフィール</h2>
+    <div class="sidebar">
+      <div class="user-profile">
+        <div class="text-right mb-2 mr--8">
+          <a href="#" class="border rounded p-1 pl-2 text-orange">編集する<img src="/icons/c-pencil.png" alt="" class="w-15"></a>
+        </div>
+        <img src="/default.jpg" alt="" class="user-icon">
+        <p>立花 祐輔 (27)</p>
 
-<br><br><br>
-<div class="card" style="width: auto; margin:40px;">
-  <img class="card-img-top" src="/assets/gitchan.jpg" alt="Card image cap">
-  <div class="card-body" style="width: auto; margin-top:40px;">
-    <h5 class="card-title">名前 : 苗字　名</h5>
-    <p class="card-text">大学 ： 甲南大学　知能情報学部　知能情報学科</p>
-    <p class="card-text">志望業界 ： IT,金融,人材</p>
+        <p>株式会社Cultiate<br>
+        #エンジニア</p>
+
+        <div class="detail-profile">
+          <h5 class="subtitle">学歴</h5>
+          <p>関西学院大学<br>
+          商学部  商学科<br>
+          2015年度卒業</p>
+
+          <h5 class="subtitle">職歴</h5>
+          <p>キーエンス株式会社 2015~2017</p>
+          <p>株式会社Cultiate 取締役 2018~</p>
+          <p>SHUKUFUKU株式会社 CTO 2018~</p>
+        </div>
+      </div>
+    </div>
+    <div class="mainbar">
+      <div class="content">
+        <h5 class="subtitle" style="margin-top:0;">自己紹介</h5>
+        <textarea name="profile" id="" class="profile-edit" cols="30" rows="5">私の強みは「身体が丈夫」な点です。これまで大きな病気をしたことがありません。バランスの取れた食事や手洗いうがいなどを心掛けて、万全の体調を維持するようにしています。運動もしているので、健康や体力には人一倍自信があります。</textarea>
+
+        <h5 class="subtitle">学生時代の活動</h5>
+        <textarea name="profile" id="" class="profile-edit" cols="30" rows="5">私の強みは「身体が丈夫」な点です。これまで大きな病気をしたことがありません。バランスの取れた食事や手洗いうがいなどを心掛けて、万全の体調を維持するようにしています。運動もしているので、健康や体力には人一倍自信があります。</textarea>
+
+        <h5 class="subtitle">話せる内容</h5>
+        <textarea name="profile" id="" class="profile-edit" cols="30" rows="5">私の強みは「身体が丈夫」な点です。これまで大きな病気をしたことがありません。バランスの取れた食事や手洗いうがいなどを心掛けて、万全の体調を維持するようにしています。運動もしているので、健康や体力には人一倍自信があります。</textarea>
+      </div>
+    </div>
   </div>
+</main>
 
-  <%= form_for @message do |f| %>
-    <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" %>
-    <%= f.hidden_field :room_id, :value => @room.id %>
-    <br>
-    <%= f.submit "投稿する" %>
-  <% end %>
-</div>
+  <%# <%= form_for @message do |f| %> %>
+    <%# <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" %> %>
+    <%# <%= f.hidden_field :room_id, :value => @room.id %> %>
+    <%# <br> %>
+    <%# <%= f.submit "投稿する" %> %>
+  <%# <% end %> %>
