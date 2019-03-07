@@ -129,3 +129,18 @@
 #reservation_coach .reservations .reservation .reserver-info {
   width: 70%;
 }
+#top_coach .bd-example {
+  width: 60%;
+  margin: 5% 20%;
+}
+#top_coach .bg-lightgray {
+  background-color: rgba(0,0,0,0.05);
+  padding: 7% 0;
+}
+#top_coach .bg-lightgray .user-icon {
+  width: 70%;
+  margin-bottom: 10%;
+}
+#top_coach .bg-lightgray p {
+  display: inline-block;
+}
