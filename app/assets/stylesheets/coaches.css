@@ -15,17 +15,17 @@
   float: left;
 }
 #mypage_coach .sidebar .user-profile {
-  margin: 3% 10%;
+  margin: 3% 10% 20%;
 }
 #mypage_coach .sidebar .user-profile .mr--8 {
   margin-right: -8%;
 }
 #mypage_coach .sidebar .user-profile .border.text-orange {
-  border-color: #ffa500 !important;
+  border-color: #f5a04e !important;
   font-size: 10px;
 }
 #mypage_coach .sidebar .user-profile .border.text-orange:hover {
-  color: #ffa500;
+  color: #f5a04e;
 }
 #mypage_coach .sidebar .user-profile .user-icon {
   width: 80%;
@@ -48,4 +48,38 @@
 }
 #mypage_coach .mainbar .profile-edit {
   width: 100%;
+}
+#review_coach .reviews {
+  width: 60%;
+  margin: auto;
+  margin-top: 5%;
+}
+#review_coach .reviews .review .progress-bar {
+  background-color: #f5a04e;
+}
+#review_coach .reviews ul {
+  list-style: none;
+}
+#review_coach .detail-reviews {
+  margin-top: 5%;
+}
+#review_coach .detail-reviews .detail-review {
+  width: 90%;
+  margin: 5% 0;
+}
+#review_coach .detail-reviews .detail-review .reviewer-img {
+  width: 20%;
+}
+#review_coach .detail-reviews .detail-review .reviewer-img .user-icon {
+  width: 40%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
+#review_coach .detail-reviews .detail-review .reviewer-text {
+  width: 80%;
+  text-align: left;
+}
+#review_coach .detail-reviews .detail-review .reviewer-text .border {
+  border-width: 2px !important;
+  border-color: #f5a04e !important;
 }

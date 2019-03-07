@@ -17,6 +17,11 @@
   border-color: #67c5ca;
   color: #67c5ca;
 }
+.user-icon {
+  width: 80%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
 #top #search {
   width: 90%;
   margin: auto;

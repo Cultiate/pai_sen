@@ -1,5 +1,10 @@
 class CoachesController < ApplicationController
 
+
+  def review
+    @coach = Coach.find(params[:coach_id])
+  end
+
   def new
     @coach = Coach.new
   end
