@@ -1,9 +1,347 @@
+<main>
+<% @coaches.each do |coach| %>
+  <%= link_to coach.name, coach_show_path(coach_id: coach.id) %>
+  <%= coach.company %>
+  <%= coach.coaching_fee %>
+  <% if Favorite.find_by(user_id: current_user, coach_id: coach.id) %>
+    <%= link_to coach_c_favorites_path(coach_id: coach.id), coach_id: coach.id, method: "DELETE" do %>
+      あ
+    <% end %>
+  <% elsif !Favorite.find_by(user_id: current_user, coach_id: coach.id) %>
+    <%= link_to coach_favorites_path(coach_id: coach.id), coach_id: coach.id, method: "POST" do %>
+      い
+    <% end %>
+  <% end %>
+<% end %>
+</main>
+<!--
+main#content[style="margin-top:100px;"]
+  section#firstview[style="background:lightblue; padding:40px 0;"]
+    .container
+      div
+        p
+          | アイキャッチ
+  section#search[style="background:lightgreen; padding:40px 0;"]
+    h2[style="text-align:left;"]
+      | ・条件を絞り込む
+    .container
+      ul.row[style="list-style:none;"]
+        li.carender-border
+          | 24日(土)
+        li.carender-border
+          | 25日(日)
+        li.carender-border
+          | 26日(月)
+        li.carender-border
+          | 27日(火)
+        li.carender-border
+          | 28日(水)
+        li.carender-border
+          | 29日(木)
+        li.carender-border
+          | 30日(金)
+        li.carender-border
+          | カレンダー
+      .row.align-items-center
+        p.align-middle[style="margin:auto 1%;"]
+          | ・時間帯
+        .dropdown
+          button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle[type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
+            |  ドロップダウンボタン
+          .dropdown-menu[aria-labelledby="dropdownMenuButton1"]
+            a.dropdown-item[href="#"]
+              | メニュー1
+            a.dropdown-item[href="#"]
+              | メニュー2
+            a.dropdown-item[href="#"]
+              | メニュー3
+            .dropdown-divider
+            a.dropdown-item[href="#"]
+              | その他リンク
+        h2[style="margin:auto 1%;"]
+          | -
+        .dropdown
+          button#dropdownMenuButton2.btn.btn-secondary.dropdown-toggle[type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
+            |  ドロップダウンボタン2
+          .dropdown-menu[aria-labelledby="dropdownMenuButton2"]
+            a.dropdown-item[href="#"]
+              | メニュー11
+            a.dropdown-item[href="#"]
+              | メニュー22
+            a.dropdown-item[href="#"]
+              | メニュー33
+            .dropdown-divider
+            a.dropdown-item[href="#"]
+              | その他リンク3
+      .card.border-secondary.mb-3[style="max-width: 100%; margin-top:40px;"]
+        .card-header
+          | icon 業種
+        .card-body.text-secondary
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | 食品・飲料
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 繊維
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | アパレル
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | 化粧品・医薬
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 電機・自動車
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 化学・石油
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | 住宅・建設
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 不動産
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 旅行
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | ホテル・レジャー
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 流通・小売
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | サービス
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | 商社
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 人材・教育
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | コンサルティング
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | 広告
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | マスコミ
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 出版・印刷
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | IT
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | ゲーム
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | ソフトウェア
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | 銀行・信金
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | クレジットカード
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 証券
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | 保険
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | インフラ
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 鉄道・航空
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 運輸・物流
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 農林・水産
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 官公庁
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | アパレル
+      .card.border-secondary.mb-3[style="max-width: 100%; margin-top:40px;"]
+        .card-header
+          | icon 職種
+        .card-body.text-secondary
+          .form-check.form-check-inline
+            input#inlineCheckbox1.form-check-input[type="checkbox" value="option1"]
+            label.form-check-label
+              | 営業
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 企画
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | マーケティング
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 人事
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 宣伝・広報
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | 総務
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 経理・財務
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | エンジニア
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | デザイナー
+          .form-check.form-check-inline
+            input#inlineCheckbox2.form-check-input[type="checkbox" value="option2"]
+            label.form-check-label
+              | コンサルタント
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 総合職
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 一般職
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 技術・研究職
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 教師・講師
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 公務員
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 社長
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 役員
+          .form-check.form-check-inline
+            input#inlineCheckbox3.form-check-input[type="checkbox" value="option3"]
+            label.form-check-label
+              | 内定者
+      .text-center
+        button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
+          | リセット
+        button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
+          | 検索
+      hr[style=""]
+      div[style=""]
+        form.form-inline.mt-2.mt-md-0
+          input.form-control.mr-sm-2.w-50[type="text" placeholder="キーワードから検索する" aria-label="Search"]
+          button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
+            | 検索
+  section#index[style="padding:40px 0;"]
+    .container
+      .row
+        div[style="width:70%;"]
+          .row
+            h2[style="margin-right:40px;"]
+              | ・コーチ一覧
+            .text-center[style=""]
+              ul.nav.nav-tabs
+                li.nav-item
+                  a.nav-link[href="#tab1" data-toggle="tab"]
+                    button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
+                      | 全体表示
+                li.nav-item
+                  a.nav-link[href="#tab2" data-toggle="tab"]
+                    button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
+                      | お気に入り表示
+          .tab-content
+            #tab1.tab-pane.active
+              .row[style="margin-top:40px;"]
+                .card.border-secondary.mb-3[style="max-width: 30%; margin:1%;"]
+                  .card-header
+                    | No.1
+                  .card-body.text-secondary.row
+                    .col-sm-6
+                      img.rounded-circle.w-100[src="/default.jpg"]
+                    .col-sm-6
+                      p
+                        | 名前：
+                        br
+                        | 重神咲也
+                      p
+                        | 会社名：
+                        br
+                        | SENPUKI
+                    .col-12.text-center
+                      p
+                        | ⭐️⭐️⭐️⭐️⭐️ 5.0
+                      p
+                        | 面談回数：14回
+                      p
+                        | ITコンサル
+                      p
+                        | マーケティング
+                      p
+                        | 神戸大学
+                    .col-12.row[style=""]
+                      p[style="width:95%;"]
 <main id="top" class="" style="margin-top:100px;">
   <section id="firstview" style="background:lightblue; padding:40px 0;">
     <div class="container">
       <div class="">
         <p>アイキャッチ</p>
-        
+
       </div>
     </div>
   </section>
@@ -332,9 +670,9 @@
                   <p>#エンジニア</p>
 
                   <%= coach.coaching_fee %>
-                  
+
                   <a href="" class="btn btn-primary">詳細</a>
-                
+
                 </div>
                 <% end %>
 
