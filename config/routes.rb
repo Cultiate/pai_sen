@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   get "messages/coach_id" => "messages#coach_index", as: :coach_msg_index
   resources :messages, :only => [:create]
 
-  resources :rooms, :only => [:create]
+  resources :rooms, :only => [:create, :show]
 
   get "login" => "sessions#new"
   post "login" => "sessions#create"
