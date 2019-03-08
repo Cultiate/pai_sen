@@ -42,6 +42,12 @@ Rails.application.routes.draw do
     delete 'c_favorites' => 'favorites#destroy'
   end
 
+  get "coaches/:coach_id/review" => "coaches#review", as: :review_coach
+  get "coaches/:coach_id/reservation" => "coaches#reservation", as: :reservation_coach
+  get "coaches/:coach_id/top" => "coaches#top", as: :top_coach
+
+
+
   get "account_activations/:user_id/user_edit" => "account_activations#edit", as: :user_edit_account_activation
   get "account_activations/:coach_id/coach_edit" => "account_activations#coach_edit", as: :coach_edit_account_activation
 

@@ -1,0 +1,146 @@
+#mypage_coach {
+  margin: 5%;
+}
+#mypage_coach .title {
+  margin-bottom: 5%;
+}
+#mypage_coach .subtitle {
+  margin: 10% 0 5%;
+}
+#mypage_coach .sidebar {
+  width: 25%;
+  margin: 0 2.5% 5%;
+  max-width: 30%;
+  background-color: rgba(0,0,0,0.05);
+  float: left;
+}
+#mypage_coach .sidebar .user-profile {
+  margin: 3% 10% 20%;
+}
+#mypage_coach .sidebar .user-profile .mr--8 {
+  margin-right: -8%;
+}
+#mypage_coach .sidebar .user-profile .border.text-orange {
+  border-color: #f5a04e !important;
+  font-size: 10px;
+}
+#mypage_coach .sidebar .user-profile .border.text-orange:hover {
+  color: #f5a04e;
+}
+#mypage_coach .sidebar .user-profile .user-icon {
+  width: 80%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
+#mypage_coach .sidebar .user-profile .detail-profile {
+  margin-top: 5%;
+  text-align: left;
+}
+#mypage_coach .sidebar .user-profile p {
+  margin: 0 10%;
+}
+#mypage_coach .mainbar {
+  width: 50%;
+  margin: 0 5%;
+  max-width: 60%;
+  float: left;
+  text-align: left;
+}
+#mypage_coach .mainbar .profile-edit {
+  width: 100%;
+}
+#review_coach .reviews {
+  width: 60%;
+  margin: auto;
+  margin-top: 5%;
+}
+#review_coach .reviews .review .progress-bar {
+  background-color: #f5a04e;
+}
+#review_coach .reviews ul {
+  list-style: none;
+}
+#review_coach .detail-reviews {
+  margin-top: 5%;
+}
+#review_coach .detail-reviews .detail-review {
+  width: 90%;
+  margin: 5% 0;
+}
+#review_coach .detail-reviews .detail-review .reviewer-img {
+  width: 20%;
+}
+#review_coach .detail-reviews .detail-review .reviewer-img .user-icon {
+  width: 40%;
+  margin-bottom: 10%;
+  border-radius: 50%;
+}
+#review_coach .detail-reviews .detail-review .reviewer-text {
+  width: 80%;
+  text-align: left;
+}
+#review_coach .detail-reviews .detail-review .reviewer-text .border {
+  border-width: 2px !important;
+  border-color: #f5a04e !important;
+}
+#reservation_coach {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+#reservation_coach .reservations {
+  text-align: left;
+}
+#reservation_coach .reservations .card {
+  margin: 5% 0;
+  border: none;
+  background-color: rgba(0,0,0,0.05);
+}
+#reservation_coach .reservations .card .card-header {
+  border-bottom: none;
+}
+#reservation_coach .reservations .card .show {
+  background-color: rgba(0,0,0,0.05) !important;
+}
+#reservation_coach .reservations .card .show .card-body .tag {
+  margin: 0 2%;
+  color: #67c5ca;
+}
+#reservation_coach .reservations a {
+  width: auto;
+}
+#reservation_coach .reservations a[aria-expanded="false"]:after {
+  content: url("/icons/plus.png");
+  margin-top: 3%;
+  margin-left: 90%;
+}
+#reservation_coach .reservations a[aria-expanded="true"]:after {
+  content: url("/icons/minus.png");
+  margin-top: 3%;
+  margin-left: 90%;
+}
+#reservation_coach .reservations .reservation .user-icon {
+  margin-bottom: 0;
+}
+#reservation_coach .reservations .reservation .reserver-icon {
+  width: 10%;
+  margin-right: 5%;
+}
+#reservation_coach .reservations .reservation .reserver-info {
+  width: 70%;
+}
+#top_coach .bd-example {
+  width: 60%;
+  margin: 5% 20%;
+}
+#top_coach .bg-lightgray {
+  background-color: rgba(0,0,0,0.05);
+  padding: 7% 0;
+}
+#top_coach .bg-lightgray .user-icon {
+  width: 70%;
+  margin-bottom: 10%;
+}
+#top_coach .bg-lightgray p {
+  display: inline-block;
+}
